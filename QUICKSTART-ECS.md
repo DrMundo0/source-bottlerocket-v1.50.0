@@ -218,3 +218,35 @@ In hosts with multiple GPUs (ex. EC2 `g4dn` instances) you can assign one or mul
   ]
 }
 ```
+
+### Neuron Support
+
+Bottlerocket `v1.30.0+` supports Neuron Instance Types such as: `inf1`, `inf2`, `trn1`, and `trn2`. You can assign one or multiple Neuron devices per container by specifying the `linuxParameter` in the task definitions as described in the [official ECS documentation](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html):
+
+```json
+{
+  "containerDefinitions": [
+      {
+         "linuxParameters": 
+            {
+                     "devices": [
+                        {
+                              "containerPath": "/dev/neuron0",
+                              "hostPath": "/dev/neuron0",
+                              "permissions": [
+                                 "read",
+                                 "write"
+                              ]
+                        }
+                     ],
+                     "capabilities": {
+                        "add": [
+                           "IPC_LOCK"
+                              
+                        ]
+                     }
+            },
+      }
+   ]
+}
+```
