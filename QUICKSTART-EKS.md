@@ -102,6 +102,8 @@ Supported variants and architectures are described in the [README](README.md#var
 For the purposes of SSM parameters, the valid architecture names are `x86_64` and `arm64` (also known as `aarch64`).
 Also, if you know a specific Bottlerocket version you'd like to use, for example `1.11.0`, you can replace `latest` with that version.
 
+All Bottlerocket EKS variants `v1.30.0+` support Neuron instance types. So, for instance, the variant for Kubernetes version 1.28 with Neuron support is `aws-k8s-1.28`.
+
 Bottlerocket EKS variants with NVIDIA support append `-nvidia` to the variant name.
 For instance, the variant for Kubernetes version 1.28 with NVIDIA support is `aws-k8s-1.28-nvidia`.
 
@@ -374,3 +376,36 @@ spec:
         limits:
           nvidia.com/gpu: 1 # requesting 1 GPU
 ```
+
+### Neuron Support
+Bottlerocket `v1.30.0+` supports Neuron Instance Types such as: `inf1`, `inf2`, `trn1`, and `trn2`. To enable Neuron workloads, you will need the following user-data configurations:
+
+```toml
+[settings]
+[settings.kubernetes]
+device-ownership-from-security-context = true
+```
+This setting allows the container to take ownership of the mounted Neuron device based on the `runAsUser` and `runAsGroup` values provided in the spec.
+For more details on this, see the [Kubernetes documentation](https://kubernetes.io/blog/2021/11/09/non-root-containers-and-devices/):
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test
+spec:
+  hostNetwork: true
+  securityContext:
+    runAsUser: 1001
+    runAsGroup: 2001
+    fsGroup: 3001
+  restartPolicy: OnFailure
+  containers:
+  - name: test
+    image: amazonlinux:2023
+    resources:
+      limits:
+        aws.amazon.com/neuron: "1"
+```
+
+Along with the `device-ownership-from-secuirity-context` setting, you will need to deploy the [neuron-device-plugin](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/containers/kubernetes-getting-started.html#neuron-device-plugin), and optionally, the [neuron-scheduler](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/containers/kubernetes-getting-started.html#neuron-scheduler-extension).

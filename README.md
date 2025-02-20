@@ -525,6 +525,14 @@ Note that older instance types, such as `p2`, are not supported by NVIDIA driver
 You need to make sure you select the appropriate AMI depending on the instance type you are planning to use.
 Please see [QUICKSTART-EKS](QUICKSTART-EKS.md#aws-k8s--nvidia-variants) for further details about Kubernetes variants, and [QUICKSTART-ECS](QUICKSTART-ECS.md#aws-ecs--nvidia-variants) for ECS variants.
 
+### Neuron Accelerated Instance Support
+
+Bottlerocket variants, from `v1.30.0+`, include the required packages and configurations to leverage [AWS Neuron Accelerated Instances](https://aws.amazon.com/ai/machine-learning/neuron/).
+
+The AMIs can be used with EC2 Neuron-equipped instance types such as: `inf1`, `inf2`, `trn1`, and `trn2`.
+
+Please see [QUICKSTART-EKS](QUICKSTART-EKS.md#Neuron-Support) for further details about Kubernetes variants, and [QUICKSTART-ECS](QUICKSTART-ECS.md#Neuron-Support) for ECS variants.
+
 ## Details
 
 ### Security
