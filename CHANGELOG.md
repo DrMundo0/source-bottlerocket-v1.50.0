@@ -1,3 +1,20 @@
+# v1.34.0 (2025-03-03)
+
+## OS Changes
+
+* Add support for NVIDIA Multi-Instance GPU (MIG) ([#4418])
+
+## Build Changes
+* Update bottlerocket-core-kit from 6.0.1 to 6.0.2 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v602-2025-02-26) ([#4416])
+* Update bottlerocket-kernel-kit from 1.1.2 to 1.2.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v120-2024-02-26) ([#4416])
+
+### Twoliter
+
+* Update Twoliter to 0.7.3 ([#4416])
+
+[#4416]: https://github.com/bottlerocket-os/bottlerocket/pull/4416
+[#4418]: https://github.com/bottlerocket-os/bottlerocket/pull/4418
+
 # v1.33.0 (2025-02-26)
 
 ## Release Highlights
