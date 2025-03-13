@@ -17,7 +17,7 @@ kernel-parameters = [
 included-packages = [
 # core
     "release",
-    "kernel-5.10",
+    "kernel-5.15",
 # docker
     "docker-cli",
     "docker-engine",
