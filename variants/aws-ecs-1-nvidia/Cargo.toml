@@ -20,7 +20,7 @@ kernel-parameters = [
 included-packages = [
 # core
     "release",
-    "kernel-5.10",
+    "kernel-5.15",
 # docker
     "docker-cli",
     "docker-engine",
@@ -30,7 +30,7 @@ included-packages = [
 # NVIDIA support
     "ecs-gpu-init",
     "nvidia-container-toolkit-ecs",
-    "kmod-5.10-nvidia-tesla-535",
+    "kmod-5.15-nvidia-tesla-535",
 ]
 
 [lib]
