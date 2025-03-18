@@ -19,7 +19,7 @@ We want to keep the footprint of Bottlerocket as small as possible for security 
 Instead, we make different variants available for use, each with its own set of software and API settings.
 
 A variant is essentially a list of packages to install, plus a model that defines the API.
-The documentation for [packages](../packages/) covers how to create a package.
+The documentation for [packages](https://github.com/bottlerocket-os/bottlerocket-core-kit/tree/develop/packages) covers how to create a package.
 Information about API settings for variants can be found in the [models](../sources/models/) documentation.
 
 ### User data

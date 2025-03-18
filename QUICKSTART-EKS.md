@@ -61,7 +61,7 @@ A walk-through of creating a storage class using the driver is available [here](
 ##### conntrack configuration
 
 By default `kube-proxy` will set the `nf_conntrack_max` kernel parameter to a default value that may differ from what Bottlerocket originally sets at boot.
-If you prefer to keep Bottlerocket's [default setting](packages/release/release-sysctl.conf), edit the kube-proxy-config ConfigMap with:
+If you prefer to keep Bottlerocket's [default setting](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/packages/release/release-sysctl.conf), edit the kube-proxy-config ConfigMap with:
 
 ```shell
 kubectl edit -n kube-system cm/kube-proxy-config
@@ -250,7 +250,7 @@ Note this down as the `INSTANCE_PROFILE_NAME` for the final launch command.
 ### kube-proxy settings
 
 By default `kube-proxy` will set the `nf_conntrack_max` kernel parameter to a default value that may differ from what Bottlerocket originally sets at boot.
-If you prefer to keep Bottlerocket's [default setting](packages/release/release-sysctl.conf), edit the kube-proxy configuration details with:
+If you prefer to keep Bottlerocket's [default setting](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/packages/release/release-sysctl.conf), edit the kube-proxy configuration details with:
 
 ```shell
 kubectl edit -n kube-system daemonset kube-proxy
