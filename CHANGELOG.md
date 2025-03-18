@@ -1,3 +1,34 @@
+# v1.35.0 (2025-03-24)
+
+## Release Highlights
+* Move the `aws-ecs-1` kernel from 5.10 to 5.15 ([#4434])
+* Persist sysctl setting changes to /etc/sysctl.d ([bottlerocket-core-kit#333](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/333)) - Thanks @aetimmes
+* Updated cis report to account for formatting change in iptables ([bottlerocket-core-kit#390](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/390))
+* Include SHA-256 and SHA-512 CPU routines in the ARM kernel image ([bottlerocket-kernel-kit#67](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/pull/67))
+
+## OS Changes
+* Update admin container from 0.11.16 to 0.11.18 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-admin-container/blob/develop/CHANGELOG.md#01118) ([commits](https://github.com/bottlerocket-os/bottlerocket-admin-container/compare/v0.11.16...v0.11.18)) ([#4431], [#4443])
+* Update bootstrap container from 0.1.1 to 0.1.3 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/blob/develop/CHANGELOG.md#013) ([commits](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/compare/v0.1.1...v0.1.3)) ([#4432], [#4443])
+* Update control container from 0.7.20 to 0.8.1 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-control-container/blob/develop/CHANGELOG.md#081) ([commits](https://github.com/bottlerocket-os/bottlerocket-control-container/compare/v0.7.20...v0.8.1)) ([#4431], [#4443])
+
+## Build Changes
+* Update `bottlerocket-core-kit` from 6.0.2 to 6.1.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v610-2025-03-14) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v6.0.2...v6.1.0)) ([#4439])
+* Update `bottlerocket-kernel-kit` from 1.2.0 to 1.3.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v130-2024-03-06) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v1.2.0...v1.3.0)) ([#4439])
+* Update `bottlerocket-sdk` from 0.50.1 to 0.60.0 ([commits](https://github.com/bottlerocket-os/bottlerocket-sdk/compare/v0.50.1...v0.60.0)) ([#4439])
+* Bump `ring` from 0.17.8 to 0.17.13 ([#4430])
+
+### Twoliter
+* Update `twoliter` from 0.7.3 to 0.8.1 [CHANGELOG](https://github.com/bottlerocket-os/twoliter/blob/develop/CHANGELOG.md#081---2025-03-13) ([commits](https://github.com/bottlerocket-os/twoliter/compare/v0.7.3...v0.8.1)) ([#4433], [#4438])
+
+[#4430]: https://github.com/bottlerocket-os/bottlerocket/pull/4430
+[#4431]: https://github.com/bottlerocket-os/bottlerocket/pull/4431
+[#4432]: https://github.com/bottlerocket-os/bottlerocket/pull/4432
+[#4433]: https://github.com/bottlerocket-os/bottlerocket/pull/4433
+[#4434]: https://github.com/bottlerocket-os/bottlerocket/pull/4434
+[#4438]: https://github.com/bottlerocket-os/bottlerocket/pull/4438
+[#4439]: https://github.com/bottlerocket-os/bottlerocket/pull/4439
+[#4443]: https://github.com/bottlerocket-os/bottlerocket/pull/4443
+
 # v1.34.0 (2025-03-03)
 
 ## OS Changes
