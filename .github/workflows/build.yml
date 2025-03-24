@@ -17,6 +17,8 @@ on:
       - '**.tpl'
       # Sample config files and OpenAPI docs
       - '**.yaml'
+      # Mailmap
+      - '.mailmap'
 
 concurrency:
   group: ${{ github.ref }}
