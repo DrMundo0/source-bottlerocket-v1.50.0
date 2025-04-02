@@ -33,6 +33,7 @@ members = [
 
     # (all previous migrations archived; add new ones after this line)
     "settings-migrations/v1.34.0/kubelet-device-plugins-mig-settings",
+    "settings-migrations/v1.36.0/kubernetes-ecr-credential-providers-expansion",
 
     "settings-plugins/aws-dev",
     "settings-plugins/aws-ecs-1",
