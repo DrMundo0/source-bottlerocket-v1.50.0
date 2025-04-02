@@ -1,3 +1,33 @@
+# v1.36.0 (2025-04-07)
+
+## Release Highlights
+* Switch to igzip (x86_64) or pigz with zlib-ng (aarch64) to decompress container images ([bottlerocket-core-kit#443](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/443))
+* Add support for more AWS regions in schnauzer and host-ctr ([bottlerocket-core-kit#454](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/454))
+
+## OS Changes
+* Update `bottlerocket-core-kit` from 6.1.0 to 6.2.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v620-2025-04-01) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v6.1.0...v6.2.0)) ([#4460], [#4452])
+* Update `bottlerocket-kernel-kit` from 1.3.0 to 2.1.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v210-2024-04-02) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v1.3.0...v2.1.0)) ([#4461])
+
+## Orchestrator Changes
+### Kubernetes
+* Authenticate with ECR public to avoid rate limits ([#4419]) - Thanks @MarkIannucci!
+* Support ECR credential provider in more ISO partitions ([#4459])
+
+## Build Changes
+* Remove redundant metadata migration helpers ([#4459])
+* Archive migrations prior to v1.34.0 ([#4459])
+* Remove schnauzer and apiclient dependencies from bottlerocket repo ([#4459])
+
+### Documentation Changes
+* Fix links to `./packages` to point to the `bottlerocket-core-kit/packages` ([#4446])
+
+[#4419]: https://github.com/bottlerocket-os/bottlerocket/pull/4419
+[#4446]: https://github.com/bottlerocket-os/bottlerocket/pull/4446
+[#4452]: https://github.com/bottlerocket-os/bottlerocket/pull/4452
+[#4459]: https://github.com/bottlerocket-os/bottlerocket/pull/4459
+[#4460]: https://github.com/bottlerocket-os/bottlerocket/pull/4460
+[#4461]: https://github.com/bottlerocket-os/bottlerocket/pull/4461
+
 # v1.35.0 (2025-03-24)
 
 ## Release Highlights
