@@ -1,5 +1,5 @@
 use migration_helpers::common_migrations::{ListReplacement, ReplaceListsMigration};
-use migration_helpers::{Result, migrate};
+use migration_helpers::{migrate, Result};
 use std::process;
 
 /// We added new hostname patterns to be matched by the ECR credential provider.
