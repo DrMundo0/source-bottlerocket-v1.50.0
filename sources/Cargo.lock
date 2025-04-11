@@ -622,6 +622,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "delete-configs-and-services-on-downgrade"
+version = "0.1.0"
+dependencies = [
+ "maplit",
+ "migration-helpers",
+ "snafu",
+]
+
+[[package]]
 name = "der-parser"
 version = "9.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
