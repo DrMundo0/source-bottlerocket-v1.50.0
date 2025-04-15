@@ -8,6 +8,7 @@ usage() {
    cat >&2 <<EOF
 usage: ${0##*/} [--sdk-image SDK_IMAGE]
                 [--aws-region AWS_REGION]
+                [--ca-signing-algorithm CA_SIGNING_ALGORITHM]
                 [--pk-ca PK_CA]
                 [--kek-ca KEK_CA]
                 [--db-ca DB_CA]
@@ -20,17 +21,19 @@ usage: ${0##*/} [--sdk-image SDK_IMAGE]
 Generate Secure Boot related files. AWS-aware edition.
 
 Options:
-    --sdk-image         Name of the (optional) SDK image to use.
-    --aws-region        AWS region where the resources live.
-    --pk-ca             PCA ARN for the Secure Boot Platform CA (PK).
-    --kek-ca            PCA ARN for the Secure Boot Key Exchange CA (KEK).
-    --db-ca             PCA ARN for the Secure Boot Database CA (db).
-    --vendor-ca         PCA ARN for the Secure Boot Vendor CA.
-    --shim-sign-key     KMS key ID or ARN for the shim signing key.
-    --code-sign-key     KMS key ID or ARN for the code signing key (grub, vmlinuz).
-    --config-sign-key   KMS key ID or ARN for the config signing key (grub.cfg).
-    --output-dir        Path where the keys will be written.
-    --help              shows this usage text
+    --sdk-image              Name of the (optional) SDK image to use.
+    --aws-region             AWS region where the resources live.
+    --ca-signing-algorithm   PCA signing algorithm (Optional, default: SHA256WITHRSA)
+                             Valid values: https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html#supported-algorithms
+    --pk-ca                  PCA ARN for the Secure Boot Platform CA (PK).
+    --kek-ca                 PCA ARN for the Secure Boot Key Exchange CA (KEK).
+    --db-ca                  PCA ARN for the Secure Boot Database CA (db).
+    --vendor-ca              PCA ARN for the Secure Boot Vendor CA.
+    --shim-sign-key          KMS key ID or ARN for the shim signing key.
+    --code-sign-key          KMS key ID or ARN for the code signing key (grub, vmlinuz).
+    --config-sign-key        KMS key ID or ARN for the config signing key (grub.cfg).
+    --output-dir             Path where the keys will be written.
+    --help                   shows this usage text
 EOF
 }
 
@@ -43,6 +46,23 @@ required_arg() {
    fi
 }
 
+validate_ca_signing_algorithm() {
+   local value
+   value="${1:?}"
+   # Ref: https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html#supported-algorithms
+   local valid_algorithms=("SHA256WITHRSA" "SHA384WITHRSA" "SHA512WITHRSA" "SHA256WITHECDSA" "SHA384WITHECDSA" "SHA512WITHECDSA")
+
+   for algorithm in "${valid_algorithms[@]}"; do
+      if [ "${value}" = "${algorithm}" ]; then
+         return 0
+      fi
+   done
+
+   echo "ERROR: Invalid CA signing algorithm: ${value}" >&2
+   echo "Valid values: ${valid_algorithms[*]}" >&2
+   exit 2
+}
+
 parse_args() {
   while [ ${#} -gt 0 ] ; do
     case "${1}" in
@@ -53,6 +73,7 @@ parse_args() {
         --kek-ca ) shift; KEK_CA="${1}" ;;
         --db-ca ) shift; DB_CA="${1}" ;;
         --vendor-ca ) shift; VENDOR_CA="${1}" ;;
+        --ca-signing-algorithm ) shift; CA_SIGNING_ALGORITHM="${1}" ;;
         --shim-sign-key ) shift; SHIM_SIGN_KEY="${1}" ;;
         --code-sign-key ) shift; CODE_SIGN_KEY="${1}" ;;
         --config-sign-key ) shift; CONFIG_SIGN_KEY="${1}" ;;
@@ -72,7 +93,19 @@ parse_args() {
   required_arg "--code-sign-key" "${CODE_SIGN_KEY:-}"
   required_arg "--config-sign-key" "${CONFIG_SIGN_KEY:-}"
   required_arg "--output-dir" "${OUTPUT_DIR:-}"
+
+  # Validate CA signing algorithm
+  validate_ca_signing_algorithm "${CA_SIGNING_ALGORITHM}"
 }
+
+# Set default variables
+if ! AWS_PARTITION=$(aws sts get-caller-identity | jq -r '.Arn' | awk -F: '{ print $2 }' 2>/dev/null) ; then
+   echo "Partition could not be determined, Defaulting to: aws." 
+   AWS_PARTITION="aws"
+fi
+
+CA_SIGNING_ALGORITHM="SHA384WITHRSA"
+
 
 parse_args "${@}"
 
@@ -198,11 +231,13 @@ cat <<'EOF' > codesign.json
 EOF
 
 gencert() {
-  local key token cn ca_arn cert_arn
+  local key token cn ca_arn cert_arn aws_partition signing_algorithm
   key="${1:?}"
   token="${2:?}"
   cn="${3:?}"
   ca_arn="${4:?}"
+  aws_partition="${5:?}"
+  signing_algorithm="${6:?}"
 
   openssl req -new \
     -key "pkcs11:token=${token}" -keyform engine -engine pkcs11 \
@@ -212,10 +247,10 @@ gencert() {
   cert_arn="$(\
     aws acm-pca issue-certificate \
       --certificate-authority-arn "${ca_arn}" \
-      --template-arn arn:aws:acm-pca:::template/BlankEndEntityCertificate_APICSRPassthrough/V1 \
+      --template-arn arn:${aws_partition}:acm-pca:::template/BlankEndEntityCertificate_APICSRPassthrough/V1 \
       --csr "fileb://${key}.csr" \
       --api-passthrough "file://codesign.json" \
-      --signing-algorithm "SHA256WITHRSA" \
+      --signing-algorithm "${signing_algorithm}" \
       --validity Value=5,Type="YEARS" \
       --idempotency-token "${key}" \
       --query 'CertificateArn')"
@@ -232,9 +267,9 @@ gencert() {
 }
 
 # Sign shim, GRUB, kernel, and GRUB config signing keys.
-gencert shim-sign "shim-sign-key" "Bottlerocket Shim Signing Key" "${DB_CA}"
-gencert code-sign "code-sign-key" "Bottlerocket Code Signing Key" "${VENDOR_CA}"
-gencert config-sign "config-sign-key" "Bottlerocket Config Signing Key" "${VENDOR_CA}"
+gencert shim-sign "shim-sign-key" "Bottlerocket Shim Signing Key" "${DB_CA}" "${AWS_PARTITION}" "${CA_SIGNING_ALGORITHM}"
+gencert code-sign "code-sign-key" "Bottlerocket Code Signing Key" "${VENDOR_CA}" "${AWS_PARTITION}" "${CA_SIGNING_ALGORITHM}"
+gencert config-sign "config-sign-key" "Bottlerocket Config Signing Key" "${VENDOR_CA}" "${AWS_PARTITION}" "${CA_SIGNING_ALGORITHM}"
 
 # Encode the certs for the PKCS11 helper.
 SHIM_SIGN_CERT="$(openssl x509 -in shim-sign.crt -outform der | openssl base64 -A)"
