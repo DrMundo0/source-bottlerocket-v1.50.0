@@ -1,3 +1,42 @@
+# v1.37.0 (2025-04-21)
+
+## Release Highlights
+* Add `brush` to enable `aws-signing-helper` and IAM Roles Anywhere usage ([bottlerocket-core-kit#451](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/451))
+* Clear configuration-files and services on upgrades ([bottlerocket-core-kit#456](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/456))
+* Remove `shimpei` and `oci-add-hooks` ([bottlerocket-core-kit#458](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/458))
+* Use the NVIDIA Container Runtime to configure GPUs for containers ([bottlerocket-core-kit#458](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/458))
+* Update `runc` from 1.1.15 to 1.2.6 ([bottlerocket-core-kit#463](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/463))
+* Allow lookups of .local domains using unicast DNS  ([bottlerocket-core-kit#464](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/464)) - Thanks @tzneal!
+* Let `kubelet` start when swap is on ([bottlerocket-core-kit#473](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/473))
+
+## OS Changes
+* Remove unnecessary settings for OCI Hooks API  ([#4474])
+* Update migrations to delete configuration-files and services on downgrade ([#4478])
+* Update `bottlerocket-core-kit` from 6.2.0 to 7.0.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v700-2025-04-18) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v6.3.0...v7.0.0)) ([#4471], [#4485])
+* Update `bottlerocket-kernel-kit` from 2.1.0 to 2.2.2 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v222-2025-04-18) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v2.1.0...v2.2.2)) ([#4485], [#4489])
+* Update admin container from 0.11.18 to 0.11.19 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-admin-container/blob/develop/CHANGELOG.md#01119) ([commits](https://github.com/bottlerocket-os/bottlerocket-admin-container/compare/v0.11.18...v0.11.19)) ([#4476])
+* Update bootstrap container from 0.1.3 to 0.2.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/blob/develop/CHANGELOG.md#020) ([commits](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/compare/v0.1.3...v0.2.0)) ([#4476])
+* Update control container from 0.8.1 to 0.8.2 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-control-container/blob/develop/CHANGELOG.md#082) ([commits](https://github.com/bottlerocket-os/bottlerocket-control-container/compare/v0.8.1...v0.8.2)) ([#4476])
+
+## Build Changes
+* Update Rust dependencies ([#4468], [#4469])
+* Update secure boot keys to include aws-partition & ca-signing-algo arguments ([#4450])
+* Update `bottlerocket-sdk` from 0.60.0 to 0.61.0 ([commits](https://github.com/bottlerocket-os/bottlerocket-sdk/compare/v0.60.0...v0.61.0)) ([#4485])
+
+### Twoliter
+* Update `twoliter` from 0.8.1 to 0.9.0 [CHANGELOG](https://github.com/bottlerocket-os/twoliter/blob/develop/CHANGELOG.md#090---2025-04-16) ([commits](https://github.com/bottlerocket-os/twoliter/compare/v0.8.1...v0.9.0)) ([#4484])
+
+[#4450]: https://github.com/bottlerocket-os/bottlerocket/pull/4450
+[#4468]: https://github.com/bottlerocket-os/bottlerocket/pull/4468
+[#4469]: https://github.com/bottlerocket-os/bottlerocket/pull/4469
+[#4471]: https://github.com/bottlerocket-os/bottlerocket/pull/4471
+[#4474]: https://github.com/bottlerocket-os/bottlerocket/pull/4474
+[#4476]: https://github.com/bottlerocket-os/bottlerocket/pull/4476
+[#4478]: https://github.com/bottlerocket-os/bottlerocket/pull/4478
+[#4484]: https://github.com/bottlerocket-os/bottlerocket/pull/4484
+[#4485]: https://github.com/bottlerocket-os/bottlerocket/pull/4485
+[#4489]: https://github.com/bottlerocket-os/bottlerocket/pull/4489
+
 # v1.36.0 (2025-04-07)
 
 ## Release Highlights
