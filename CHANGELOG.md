@@ -12,7 +12,7 @@
 ## OS Changes
 * Remove unnecessary settings for OCI Hooks API  ([#4474])
 * Update migrations to delete configuration-files and services on downgrade ([#4478])
-* Update `bottlerocket-core-kit` from 6.2.0 to 7.0.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v700-2025-04-18) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v6.3.0...v7.0.0)) ([#4471], [#4485])
+* Update `bottlerocket-core-kit` from 6.2.0 to 7.0.1 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v701-2025-04-22) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v6.3.0...v7.0.1)) ([#4471], [#4485], [#4490])
 * Update `bottlerocket-kernel-kit` from 2.1.0 to 2.2.2 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v222-2025-04-18) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v2.1.0...v2.2.2)) ([#4485], [#4489])
 * Update admin container from 0.11.18 to 0.11.19 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-admin-container/blob/develop/CHANGELOG.md#01119) ([commits](https://github.com/bottlerocket-os/bottlerocket-admin-container/compare/v0.11.18...v0.11.19)) ([#4476])
 * Update bootstrap container from 0.1.3 to 0.2.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/blob/develop/CHANGELOG.md#020) ([commits](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/compare/v0.1.3...v0.2.0)) ([#4476])
@@ -36,6 +36,7 @@
 [#4484]: https://github.com/bottlerocket-os/bottlerocket/pull/4484
 [#4485]: https://github.com/bottlerocket-os/bottlerocket/pull/4485
 [#4489]: https://github.com/bottlerocket-os/bottlerocket/pull/4489
+[#4490]: https://github.com/bottlerocket-os/bottlerocket/pull/4490
 
 # v1.36.0 (2025-04-07)
 
