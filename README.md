@@ -61,7 +61,6 @@ For example, an `x86_64` build of the `aws-k8s-1.32` variant will produce an ima
 
 The following variants support EKS, as described above:
 
-* `aws-k8s-1.25`
 * `aws-k8s-1.26`
 * `aws-k8s-1.27`
 * `aws-k8s-1.28`
@@ -69,7 +68,6 @@ The following variants support EKS, as described above:
 * `aws-k8s-1.30`
 * `aws-k8s-1.31`
 * `aws-k8s-1.32`
-* `aws-k8s-1.25-nvidia`
 * `aws-k8s-1.26-nvidia`
 * `aws-k8s-1.27-nvidia`
 * `aws-k8s-1.28-nvidia`
@@ -95,7 +93,7 @@ We also have variants that are designed to be Kubernetes worker nodes in VMware:
 
 The following variants are no longer supported:
 
-* All Kubernetes variants using Kubernetes 1.24 and earlier
+* All Kubernetes variants using Kubernetes 1.25 and earlier
 * VMware variants using Kubernetes 1.27 and earlier
 * Bare metal variants for Kubernetes
 
