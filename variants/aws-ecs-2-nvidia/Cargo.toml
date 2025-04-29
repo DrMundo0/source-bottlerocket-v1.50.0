@@ -28,7 +28,7 @@ included-packages = [
 # NVIDIA support
     "ecs-gpu-init",
     "nvidia-container-toolkit-ecs",
-    "kmod-6.1-nvidia-tesla-535",
+    "kmod-6.1-nvidia-r570-tesla",
 ]
 
 kernel-parameters = [
