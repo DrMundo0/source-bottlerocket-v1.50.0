@@ -1,3 +1,24 @@
+# v1.38.0 (2025-04-29)
+
+## Release Highlights
+* Move aws-ecs-2-nvidia, aws-k8s-1.28-nvidia, aws-k8s-1.29-nvidia, aws-k8s-1.30-nvidia, aws-k8s-1.31-nvidia, and aws-k8s-1.32-nvidia variants from NVIDIA r535 driver to r570 driver ([#4499], [#4441])
+* Remove aws-k8s-1.25 variants ([#4497], [#4496])
+
+## OS Changes
+* Update `bottlerocket-core-kit` from 7.0.1 to 8.0.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v800-2025-04-28) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v7.0.1...v8.0.0)) ([#4501])
+* Update `bottlerocket-kernel-kit` from 2.2.2 to 2.3.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v230-2025-04-28) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v2.2.2...v2.3.0)) ([#4498])
+
+## Build Changes
+* Pass missing vars to sbkeys script ([#4493]) 
+
+[#4493]: https://github.com/bottlerocket-os/bottlerocket/pull/4493
+[#4496]: https://github.com/bottlerocket-os/bottlerocket/issues/4496
+[#4497]: https://github.com/bottlerocket-os/bottlerocket/pull/4497
+[#4498]: https://github.com/bottlerocket-os/bottlerocket/pull/4498
+[#4499]: https://github.com/bottlerocket-os/bottlerocket/pull/4499
+[#4441]: https://github.com/bottlerocket-os/bottlerocket/issues/4441
+[#4501]: https://github.com/bottlerocket-os/bottlerocket/pull/4501
+ 
 # v1.37.0 (2025-04-21)
 
 ## Release Highlights
