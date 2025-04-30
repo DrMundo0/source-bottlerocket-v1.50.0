@@ -1,4 +1,4 @@
-version = "1.38.0"
+version = "1.39.0"
 
 [migrations]
 "(0.3.1, 0.3.2)" = ["migrate_v0.3.2_admin-container-v0-5-0.lz4"]
@@ -415,3 +415,6 @@ version = "1.38.0"
     "migrate_v1.37.0_delete-configs-and-services-on-downgrade.lz4",
 ]
 "(1.37.0, 1.38.0)" = []
+"(1.38.0, 1.39.0)" = [
+    "migrate_v1.39.0_kubelet-setting-container-log-single-process-oom-kill.lz4"
+]

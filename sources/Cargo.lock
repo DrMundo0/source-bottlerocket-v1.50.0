@@ -844,6 +844,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "kubelet-setting-container-log-single-process-oom-kill"
+version = "0.1.0"
+dependencies = [
+ "maplit",
+ "migration-helpers",
+ "snafu",
+]
+
+[[package]]
 name = "kubernetes-ecr-credential-providers-expansion"
 version = "0.1.0"
 dependencies = [
