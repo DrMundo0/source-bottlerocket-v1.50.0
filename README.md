@@ -68,6 +68,7 @@ The following variants support EKS, as described above:
 * `aws-k8s-1.30`
 * `aws-k8s-1.31`
 * `aws-k8s-1.32`
+* `aws-k8s-1.33`
 * `aws-k8s-1.26-nvidia`
 * `aws-k8s-1.27-nvidia`
 * `aws-k8s-1.28-nvidia`
@@ -75,6 +76,7 @@ The following variants support EKS, as described above:
 * `aws-k8s-1.30-nvidia`
 * `aws-k8s-1.31-nvidia`
 * `aws-k8s-1.32-nvidia`
+* `aws-k8s-1.33-nvidia`
 
 The following variants support ECS:
 
@@ -90,6 +92,7 @@ We also have variants that are designed to be Kubernetes worker nodes in VMware:
 * `vmware-k8s-1.30`
 * `vmware-k8s-1.31`
 * `vmware-k8s-1.32`
+* `vmware-k8s-1.33`
 
 The following variants are no longer supported:
 
