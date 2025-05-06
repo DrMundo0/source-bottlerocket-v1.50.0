@@ -140,6 +140,21 @@ It supports self-hosted clusters and clusters managed by [EKS](https://aws.amazo
 
 This variant is compatible with Kubernetes 1.32, 1.33, 1.34 and 1.35 clusters.
 
+### aws-k8s-1.33: Kubernetes 1.33 node
+
+The [aws-k8s-1.33](aws-k8s-1.33/Cargo.toml) variant includes the packages needed to run a Kubernetes node in AWS.
+It supports self-hosted clusters and clusters managed by [EKS](https://aws.amazon.com/eks/).
+
+This variant is compatible with Kubernetes 1.33, 1.34, 1.35 and 1.36 clusters.
+
+### aws-k8s-1.33-nvidia: Kubernetes 1.33 NVIDIA node
+
+The [aws-k8s-1.33-nvidia](aws-k8s-1.33-nvidia/Cargo.toml) variant includes the packages needed to run a Kubernetes node in AWS.
+It also includes the required packages to configure containers to leverage NVIDIA GPUs.
+It supports self-hosted clusters and clusters managed by [EKS](https://aws.amazon.com/eks/).
+
+This variant is compatible with Kubernetes 1.33, 1.34, 1.35 and 1.36 clusters.
+
 ### aws-ecs-1: Amazon ECS container instance
 
 The [aws-ecs-1](aws-ecs-1/Cargo.toml) variant includes the packages needed to run an [Amazon ECS](https://ecs.aws)
@@ -207,6 +222,13 @@ The [vmware-k8s-1.32](vmware-k8s-1.32/Cargo.toml) variant includes the packages 
 It supports self-hosted clusters.
 
 This variant is compatible with Kubernetes 1.32, 1.33, 1.34, and 1.35 clusters.
+
+## vmware-k8s-1.33: VMware Kubernetes 1.33 node
+
+The [vmware-k8s-1.33](vmware-k8s-1.33/Cargo.toml) variant includes the packages needed to run a Kubernetes worker node as a VMware guest.
+It supports self-hosted clusters.
+
+This variant is compatible with Kubernetes 1.33, 1.34, 1.35, and 1.36 clusters.
 
 ### metal-dev: Metal development build
 
