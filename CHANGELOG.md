@@ -1,3 +1,48 @@
+# v1.39.0 (2025-05-06)
+
+## Release Highlights
+* Provide `containerd-2.0` and `containerd-1.7` ([bottlerocket-core-kit#485](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/485))
+* Add new k8s 1.33 variants ([#4507], [#4513]):
+  * Add `aws-k8s-1.33`, `aws-k8s-1.33-nvidia`, `aws-k8s-1.33-fips`, `vmware-k8s-1.33`, and `vmware-k8s-1.33-fips`variants
+  * FIPS variants use 6.1 kernel, all others use 6.12 kernel
+  * Use EROFS for root filesystem on Kernel 6.12 variants
+  * Use `containerd-2.0` on all k8s 1.33 variants
+  * Use EBS volume `gp3` for all AWS k8s 1.33 variant AMIs
+  * Require IMDSv2 by default for new k8s 1.33 variant AMIs. For applications not yet compatible
+    with IMDSv2, this can be disabled at the instance or account level. See
+    [the AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence)
+    for more details.
+
+## OS Changes
+* Update `bottlerocket-core-kit` from 8.0.0 to 8.1.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v810-2025-05-05) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v8.0.0...v8.1.0)) ([#4510])
+* Update `bottlerocket-kernel-kit` from 2.3.0 to 2.3.3 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v233-2025-05-01) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v2.3.0...v2.3.3)) ([#4508])
+* Update admin container from 0.11.19 to 0.11.20 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-admin-container/blob/develop/CHANGELOG.md#01120) ([commits](https://github.com/bottlerocket-os/bottlerocket-admin-container/compare/v0.11.19...v0.11.20)) ([#4509])
+* Update bootstrap container from 0.2.0 to 0.2.1 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/blob/develop/CHANGELOG.md#021) ([commits](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/compare/v0.2.0...v0.2.1)) ([#4509])
+* Update control container from 0.8.2 to 0.8.3 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-control-container/blob/develop/CHANGELOG.md#083) ([commits](https://github.com/bottlerocket-os/bottlerocket-control-container/compare/v0.8.2...v0.8.3)) ([#4509])
+
+## Orchestrator Changes
+
+### Kubernetes
+* Add `aws-k8s-1.33`, `aws-k8s-1.33-nvidia`, `aws-k8s-1.33-fips`, `vmware-k8s-1.33`, and `vmware-k8s-1.33-fips`variants ([#4507])
+* Add new Kubernetes settings ([#4506])
+  * `containerLogMaxWorkers`
+  * `containerLogMonitorInterval`
+  * `singleProcessOOMKill`
+
+## Build Changes
+* Use GP3 volumes and require IMDSv2 by default for AWS k8s 1.33 variant AMIs. ([#4513])
+
+### Twoliter
+* Update `twoliter` from 0.9.0 to 0.10.0 [CHANGELOG](https://github.com/bottlerocket-os/twoliter/blob/develop/CHANGELOG.md#0100---2025-05-06) ([commits](https://github.com/bottlerocket-os/twoliter/compare/v0.9.0...v0.10.0)) ([#4512])
+
+[#4506]: https://github.com/bottlerocket-os/bottlerocket/pull/4506
+[#4507]: https://github.com/bottlerocket-os/bottlerocket/pull/4507
+[#4508]: https://github.com/bottlerocket-os/bottlerocket/pull/4508
+[#4509]: https://github.com/bottlerocket-os/bottlerocket/pull/4509
+[#4510]: https://github.com/bottlerocket-os/bottlerocket/pull/4510
+[#4512]: https://github.com/bottlerocket-os/bottlerocket/pull/4512
+[#4513]: https://github.com/bottlerocket-os/bottlerocket/pull/4513
+
 # v1.38.0 (2025-04-29)
 
 ## Release Highlights
@@ -9,7 +54,7 @@
 * Update `bottlerocket-kernel-kit` from 2.2.2 to 2.3.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v230-2025-04-28) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v2.2.2...v2.3.0)) ([#4498])
 
 ## Build Changes
-* Pass missing vars to sbkeys script ([#4493]) 
+* Pass missing vars to sbkeys script ([#4493])
 
 [#4493]: https://github.com/bottlerocket-os/bottlerocket/pull/4493
 [#4496]: https://github.com/bottlerocket-os/bottlerocket/issues/4496
@@ -18,7 +63,7 @@
 [#4499]: https://github.com/bottlerocket-os/bottlerocket/pull/4499
 [#4441]: https://github.com/bottlerocket-os/bottlerocket/issues/4441
 [#4501]: https://github.com/bottlerocket-os/bottlerocket/pull/4501
- 
+
 # v1.37.0 (2025-04-21)
 
 ## Release Highlights
