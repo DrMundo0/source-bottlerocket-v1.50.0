@@ -1,0 +1,9 @@
+# https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html
+imds-support = "v2.0"
+
+# Override the pubsys "gp2" default
+[block-device-mappings."/dev/xvda".ebs]
+volume-type = "gp3"
+
+[block-device-mappings."/dev/xvdb".ebs]
+volume-type = "gp3"
