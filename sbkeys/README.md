@@ -28,10 +28,10 @@ It also uses [virt-fw-vars](https://pypi.org/project/virt-firmware/) to generate
 When specifying an SDK image, these dependencies are run within a container started from that image, and do not need to be installed on the host.
 
 ```shell
-ARCH="$(uname -m)"
-SDK_VERSION="v0.29.0"
+# replace v0.61.0 with the current SDK version
+SDK_VERSION="v0.61.0"
 ./generate-local-sbkeys \
-  --sdk-image "public.ecr.aws/bottlerocket/bottlerocket-sdk-${ARCH}:${SDK_VERSION}" \
+  --sdk-image "public.ecr.aws/bottlerocket/bottlerocket-sdk:${SDK_VERSION}" \
   --output-dir "${PWD}/my-local-profile"
 ```
 
@@ -50,8 +50,8 @@ Note that the cost of these resources, **especially the private CAs**, is nontri
 Although it is possible to use the same private CA and the same KMS key for all roles, doing so would weaken the security of the implementation, and is **strongly discouraged**.
 
 ```shell
-ARCH="$(uname -m)"
-SDK_VERSION="v0.29.0"
+# replace v0.61.0 with the current SDK version
+SDK_VERSION="v0.61.0"
 
 # AWS Private CAs
 PK_CA="arn:aws:acm-pca:us-west-2:999999999999:certificate-authority/11111111-1111-1111-1111-111111111111"
@@ -65,7 +65,7 @@ CODE_SIGN_KEY="arn:aws:kms:us-west-2:999999999999:key/bbbbbbbb-bbbb-bbbb-bbbb-bb
 CONFIG_SIGN_KEY="arn:aws:kms:us-west-2:999999999999:key/cccccccc-cccc-cccc-cccc-cccccccccccc"
 
 ./generate-aws-sbkeys \
-  --sdk-image "public.ecr.aws/bottlerocket/bottlerocket-sdk-${ARCH}:${SDK_VERSION}" \
+  --sdk-image "public.ecr.aws/bottlerocket/bottlerocket-sdk:${SDK_VERSION}" \
   --aws-region us-west-2 \
   --pk-ca "${PK_CA}" \
   --kek-ca "${KEK_CA}" \
