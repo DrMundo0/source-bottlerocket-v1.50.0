@@ -121,6 +121,9 @@ pub enum Error {
         source
     ))]
     DeserializeSettingsGenerator { source: serde_json::Error },
+
+    #[snafu(display("Setting data '{}' must be either a string or a list", data))]
+    InvalidSettingType { data: String },
 }
 
 /// Result alias containing our Error type.

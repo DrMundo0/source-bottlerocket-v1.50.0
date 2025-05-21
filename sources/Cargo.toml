@@ -37,6 +37,7 @@ members = [
     "settings-migrations/v1.36.0/kubernetes-ecr-credential-providers-expansion",
     "settings-migrations/v1.37.0/delete-configs-and-services-on-downgrade",
     "settings-migrations/v1.39.0/kubelet-setting-container-log-single-process-oom-kill",
+    "settings-migrations/v1.40.0/kubelet-device-plugins-cdi-settings",
 
     "settings-plugins/aws-dev",
     "settings-plugins/aws-ecs-1",
