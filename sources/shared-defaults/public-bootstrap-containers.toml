@@ -1,4 +1,4 @@
 [metadata.settings.bootstrap-containers.source.setting-generator]
-command = "schnauzer-v2 render --template 'public.ecr.aws/bottlerocket/bottlerocket-bootstrap:v0.2.1'"
+command = "schnauzer-v2 render --template 'public.ecr.aws/bottlerocket/bottlerocket-bootstrap:v0.2.2'"
 strength = "weak"
 depth = 1
