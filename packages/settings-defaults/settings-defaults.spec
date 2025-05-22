@@ -71,26 +71,6 @@ Conflicts: %{_cross_os}settings-defaults(any)
 %description aws-ecs-2-nvidia
 %{summary}.
 
-%package aws-k8s-1.26
-Summary: Settings defaults for the aws-k8s-1.26 variant
-Requires: %{_cross_os}variant(aws-k8s-1.26)
-Provides: %{_cross_os}settings-defaults(any)
-Provides: %{_cross_os}settings-defaults(aws-k8s-1.26)
-Conflicts: %{_cross_os}settings-defaults(any)
-
-%description aws-k8s-1.26
-%{summary}.
-
-%package aws-k8s-1.26-nvidia
-Summary: Settings defaults for the aws-k8s-1.26-nvidia variant
-Requires: %{_cross_os}variant(aws-k8s-1.26-nvidia)
-Provides: %{_cross_os}settings-defaults(any)
-Provides: %{_cross_os}settings-defaults(aws-k8s-1.26-nvidia)
-Conflicts: %{_cross_os}settings-defaults(any)
-
-%description aws-k8s-1.26-nvidia
-%{summary}.
-
 %package aws-k8s-1.31
 Summary: Settings defaults for the aws-k8s 1.27 through 1.31 variants
 Requires: (%{shrink:
@@ -269,8 +249,6 @@ for defaults in \
   aws-ecs-1-nvidia \
   aws-ecs-2 \
   aws-ecs-2-nvidia \
-  aws-k8s-1.26 \
-  aws-k8s-1.26-nvidia \
   aws-k8s-1.31 \
   aws-k8s-1.31-nvidia \
   aws-k8s-1.32 \
@@ -306,8 +284,6 @@ for defaults in \
   aws-ecs-1-nvidia \
   aws-ecs-2 \
   aws-ecs-2-nvidia \
-  aws-k8s-1.26 \
-  aws-k8s-1.26-nvidia \
   aws-k8s-1.31 \
   aws-k8s-1.31-nvidia \
   aws-k8s-1.32 \
@@ -351,14 +327,6 @@ done
 %files aws-ecs-2-nvidia
 %{_cross_defaultsdir}/aws-ecs-2-nvidia.toml
 %{_cross_tmpfilesdir}/storewolf-defaults-aws-ecs-2-nvidia.conf
-
-%files aws-k8s-1.26
-%{_cross_defaultsdir}/aws-k8s-1.26.toml
-%{_cross_tmpfilesdir}/storewolf-defaults-aws-k8s-1.26.conf
-
-%files aws-k8s-1.26-nvidia
-%{_cross_defaultsdir}/aws-k8s-1.26-nvidia.toml
-%{_cross_tmpfilesdir}/storewolf-defaults-aws-k8s-1.26-nvidia.conf
 
 %files aws-k8s-1.31
 %{_cross_defaultsdir}/aws-k8s-1.31.toml

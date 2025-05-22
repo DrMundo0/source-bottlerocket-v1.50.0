@@ -18,8 +18,6 @@ members = [
     "settings-defaults/aws-ecs-1-nvidia",
     "settings-defaults/aws-ecs-2",
     "settings-defaults/aws-ecs-2-nvidia",
-    "settings-defaults/aws-k8s-1.26",
-    "settings-defaults/aws-k8s-1.26-nvidia",
     "settings-defaults/aws-k8s-1.31",
     "settings-defaults/aws-k8s-1.31-nvidia",
     "settings-defaults/aws-k8s-1.32",
