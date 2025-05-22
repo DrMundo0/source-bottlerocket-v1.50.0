@@ -1,3 +1,21 @@
+# v1.40.0 (2025-05-22)
+
+## Release Highlights
+* Migrate ECS to use CDI ([bottlerocket-core-kit#482](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/482))
+* Support CDI and legacy NVIDIA Container Runtime modes ([#4475])
+* Add NVLink Subnet Manager to support NVIDIA B200 ([bottlerocket-core-kit#499](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/499), [bottlerocket-kernel-kit#142](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/pull/142))
+
+## OS Changes
+* Update `bottlerocket-core-kit` from 8.1.1 to 8.2.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v820-2025-05-20) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v8.1.1...v8.2.0)) ([#4532])
+* Update `bottlerocket-kernel-kit` from 2.3.3 to 2.5.1 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v251-2025-05-22) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v2.3.3...v2.5.1)) ([#4537])
+* Update bootstrap container from 0.2.1 to 0.2.2 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/blob/develop/CHANGELOG.md#022) ([commits](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/compare/v0.2.1...v0.2.2)) ([#4535])
+* Update control container from 0.8.3 to 0.8.4 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-control-container/blob/develop/CHANGELOG.md#084) ([commits](https://github.com/bottlerocket-os/bottlerocket-control-container/compare/v0.8.3...v0.8.4)) ([#4535])
+
+[#4475]: https://github.com/bottlerocket-os/bottlerocket/pull/4475
+[#4532]: https://github.com/bottlerocket-os/bottlerocket/pull/4532
+[#4535]: https://github.com/bottlerocket-os/bottlerocket/pull/4535
+[#4537]: https://github.com/bottlerocket-os/bottlerocket/pull/4537
+
 # v1.39.1 (2025-05-19)
 
 ## OS Changes
