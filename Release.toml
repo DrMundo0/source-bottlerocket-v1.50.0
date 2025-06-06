@@ -1,4 +1,4 @@
-version = "1.40.0"
+version = "1.41.0"
 
 [migrations]
 "(0.3.1, 0.3.2)" = ["migrate_v0.3.2_admin-container-v0-5-0.lz4"]
@@ -421,5 +421,7 @@ version = "1.40.0"
 "(1.39.0, 1.39.1)" = []
 "(1.39.1, 1.40.0)" = [
     "migrate_v1.40.0_kubelet-device-plugins-cdi-settings.lz4"
+]
+"(1.40.0, 1.41.0)" = [
 ]
 
