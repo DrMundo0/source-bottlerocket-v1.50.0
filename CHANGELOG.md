@@ -1,3 +1,38 @@
+# v1.41.0 (2025-06-17)
+
+## Release Highlights
+* Remove aws-k8s-1.26 variants ([#4519], [#4536])
+* Add `zramctl` to `util-linux` package ([bottlerocket-core-kit#543])
+* Enable LTO and arch-specific optimizations ([bottlerocket-sdk#276], [bottlerocket-core-kit#526])
+* Provide Vulkan ICD configuration files for variants using the 6.1 and 6.12 kernels ([bottlerocket-kernel-kit#138]) - Thanks, @iterion!
+* Build GRUB with optimizations ([bottlerocket-kernel-kit#163])
+* Provide `libnvidia-gpucomp.so` ([bottlerocket-kernel-kit#181]) - Thanks, @tzmtl!
+
+## OS Changes
+* Update `bottlerocket-core-kit` from 8.2.0 to 9.0.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v900-2025-06-10) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v8.2.0...v9.0.0)) ([#4561])
+* Update `bottlerocket-kernel-kit` from 2.5.1 to 3.1.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v310-2025-06-11) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v2.5.1...v3.1.0)) ([#4561])
+* Drop setting generator for hugepages ([#4411])
+
+## Build Changes
+* Update `bottlerocket-sdk` from 0.61.0 to 0.62.0 ([commits](https://github.com/bottlerocket-os/bottlerocket-sdk/compare/v0.61.0...v0.62.0)) ([#4561])
+
+## Orchestrator Changes
+### Kubernetes
+* Remove aws-k8s-1.26 variants ([#4519], [#4536])
+* Fix image patterns for ECR dual-stack endpoint ([#4518]) - Thanks @rxnew, @cartermckinnon!
+
+[#4411]: https://github.com/bottlerocket-os/bottlerocket/pull/4411
+[#4518]: https://github.com/bottlerocket-os/bottlerocket/pull/4518
+[#4519]: https://github.com/bottlerocket-os/bottlerocket/issues/4519
+[#4536]: https://github.com/bottlerocket-os/bottlerocket/pull/4536
+[#4561]: https://github.com/bottlerocket-os/bottlerocket/pull/4561
+[bottlerocket-core-kit#526]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/526
+[bottlerocket-core-kit#543]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/543
+[bottlerocket-sdk#276]: https://github.com/bottlerocket-os/bottlerocket-sdk/pull/276
+[bottlerocket-kernel-kit#138]: https://github.com/bottlerocket-os/bottlerocket-kernel-kit/pull/138
+[bottlerocket-kernel-kit#163]: https://github.com/bottlerocket-os/bottlerocket-kernel-kit/pull/163
+[bottlerocket-kernel-kit#181]: https://github.com/bottlerocket-os/bottlerocket-kernel-kit/pull/181
+
 # v1.40.0 (2025-05-22)
 
 ## Release Highlights
