@@ -1,3 +1,26 @@
+# v1.42.0 (2025-06-30)
+
+## Release Highlights
+* Add support for kubernetes `memory-swap-behavior` ([#4566], [bottlerocket-core-kit#541], [bottlerocket-settings-sdk#88]) - Thanks @teskje!
+
+## OS Changes
+* Update `bottlerocket-core-kit` from 9.0.0 to 9.1.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v910-2025-06-23) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v9.0.0...v9.1.0)) ([#4569])
+* Update `bottlerocket-kernel-kit` from 3.1.0 to 3.1.1 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v311-2025-07-24) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v3.1.0...v3.1.1)) ([#4570])
+* Update admin container from 0.11.20 to 0.12.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-admin-container/blob/develop/CHANGELOG.md#0120) ([commits](https://github.com/bottlerocket-os/bottlerocket-admin-container/compare/v0.11.20...v0.12.0)) ([#4565])
+* Update bootstrap container from 0.2.2 to 0.2.3 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/blob/develop/CHANGELOG.md#023) ([commits](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/compare/v0.2.2...v0.2.3)) ([#4565])
+* Update control container from 0.8.4 to 0.8.5 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-control-container/blob/develop/CHANGELOG.md#085) ([commits](https://github.com/bottlerocket-os/bottlerocket-control-container/compare/v0.8.4...v0.8.5)) ([#4565])
+
+## Orchestrator Changes
+### Kubernetes
+* Support kubernetes `memory-swap-behavior` setting [#4566] - Thanks @teskje!
+
+[#4565]: https://github.com/bottlerocket-os/bottlerocket/pull/4565
+[#4566]: https://github.com/bottlerocket-os/bottlerocket/pull/4566
+[#4569]: https://github.com/bottlerocket-os/bottlerocket/pull/4569
+[#4570]: https://github.com/bottlerocket-os/bottlerocket/pull/4570
+[bottlerocket-settings-sdk#88]:https://github.com/bottlerocket-os/bottlerocket-settings-sdk/pull/88
+[bottlerocket-core-kit#541]:https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/541
+
 # v1.41.0 (2025-06-17)
 
 ## Release Highlights
