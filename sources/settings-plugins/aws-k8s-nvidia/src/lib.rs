@@ -23,6 +23,7 @@ struct AwsK8sSettings {
     cloudformation: bottlerocket_settings_models::CloudFormationSettingsV1,
     dns: bottlerocket_settings_models::DnsSettingsV1,
     container_runtime: bottlerocket_settings_models::ContainerRuntimeSettingsV1,
+    container_runtime_plugins: bottlerocket_settings_models::ContainerRuntimePluginsSettingsV1,
     autoscaling: bottlerocket_settings_models::AutoScalingSettingsV1,
     nvidia_container_runtime: bottlerocket_settings_models::NvidiaContainerRuntimeSettingsV1,
     kubelet_device_plugins: bottlerocket_settings_models::KubeletDevicePluginsV1,
