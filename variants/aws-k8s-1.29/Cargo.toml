@@ -25,6 +25,7 @@ included-packages = [
     "cni-plugins",
     "kubelet-1.29",
     "aws-iam-authenticator",
+    "soci-snapshotter",
 ]
 kernel-parameters = [
     "console=tty0",
