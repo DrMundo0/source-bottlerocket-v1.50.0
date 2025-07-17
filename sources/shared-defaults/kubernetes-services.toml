@@ -10,6 +10,7 @@ configuration-files = [
   "kubelet-server-crt",
   "kubelet-server-key",
   "credential-provider-config-yaml",
+  "k8s-snapshotter-conf",
 ]
 restart-commands = [
   "/usr/bin/systemctl try-restart kubelet.service"
@@ -23,6 +24,12 @@ template-path = "/usr/share/templates/kubelet-env"
 path = "/etc/kubernetes/kubelet/config"
 template-path = "/usr/share/templates/kubelet-config"
 mode = "0600"
+
+[configuration-files.k8s-snapshotter-conf]
+path = "/etc/kubernetes/kubelet/config.d/001-snapshotter.conf"
+template-path = "/usr/share/templates/k8s-snapshotter-conf"
+mode = "0600"
+overwrite-path-if-present = false
 
 [configuration-files.kubelet-kubeconfig]
 path = "/etc/kubernetes/kubelet/kubeconfig"
