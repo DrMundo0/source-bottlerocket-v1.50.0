@@ -16,11 +16,10 @@ pub struct Args {
 fn usage() -> ! {
     let program_name = env::args().next().unwrap_or_else(|| "program".to_string());
     eprintln!(
-        r"Usage: {}
+        r"Usage: {program_name}
             --source-datastore PATH
             --target-datastore PATH
-            ( --forward | --backward )",
-        program_name
+            ( --forward | --backward )"
     );
     process::exit(2);
 }

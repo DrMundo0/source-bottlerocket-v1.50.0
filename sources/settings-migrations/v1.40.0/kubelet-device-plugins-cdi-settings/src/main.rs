@@ -60,7 +60,7 @@ impl Migration for ReplaceDeviceListStrategy {
                 .fail()?,
             }
         } else {
-            println!("Found no '{}' to change on downgrade", setting);
+            println!("Found no '{setting}' to change on downgrade");
         }
 
         Ok(input)
