@@ -22,9 +22,9 @@ impl Migration for AddSettingsMigration<'_> {
     fn backward(&mut self, mut input: MigrationData) -> Result<MigrationData> {
         for setting in self.0 {
             if let Some(data) = input.data.remove(*setting) {
-                println!("Removed {}, which was set to '{}'", setting, data);
+                println!("Removed {setting}, which was set to '{data}'");
             } else {
-                println!("Found no {} to remove", setting);
+                println!("Found no {setting} to remove");
             }
         }
         Ok(input)
@@ -63,7 +63,7 @@ impl Migration for AddPrefixesMigration {
             .collect::<Vec<_>>();
         for setting in settings {
             if let Some(data) = input.data.remove(&setting) {
-                println!("Removed {}, which was set to '{}'", setting, data);
+                println!("Removed {setting}, which was set to '{data}'");
             }
         }
         Ok(input)
@@ -165,9 +165,9 @@ impl Migration for RemoveSettingsMigration<'_> {
     fn forward(&mut self, mut input: MigrationData) -> Result<MigrationData> {
         for setting in self.0 {
             if let Some(data) = input.data.remove(*setting) {
-                println!("Removed {}, which was set to '{}'", setting, data);
+                println!("Removed {setting}, which was set to '{data}'");
             } else {
-                println!("Found no {} to remove", setting);
+                println!("Found no {setting} to remove");
             }
         }
         Ok(input)
