@@ -558,6 +558,10 @@ run_task = "run-twoliter"
 [tasks.reset-test]
 run_task = "run-twoliter"
 
+# This task will clear a specific test and its resources from the testsys cluster.
+[tasks.reset-single-test]
+run_task = "run-twoliter"
+
 # This task will clear all testsys components from the testsys cluster.
 [tasks.uninstall-test]
 run_task = "run-twoliter"
