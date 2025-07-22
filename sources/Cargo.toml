@@ -38,6 +38,8 @@ members = [
     "settings-migrations/v1.40.0/kubelet-device-plugins-cdi-settings",
     "settings-migrations/v1.41.0/kubernetes-ecr-credential-providers-correction",
     "settings-migrations/v1.42.0/kubernetes-memory-swap-behavior-setting",
+    "settings-migrations/v1.44.0/container-runtime-plugins-settings",
+    "settings-migrations/v1.44.0/container-runtime-snapshotter-setting",
 
     "settings-plugins/aws-dev",
     "settings-plugins/aws-ecs-1",

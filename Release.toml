@@ -429,3 +429,7 @@ version = "1.43.0"
     "migrate_v1.42.0_kubernetes-memory-swap-behavior-setting.lz4",
 ]
 "(1.42.0, 1.43.0)" = []
+"(1.43.0, 1.44.0)" = [
+    "migrate_v1.44.0_container-runtime-plugins-settings.lz4",
+    "migrate_v1.44.0_container-runtime-snapshotter-setting.lz4",
+]

@@ -614,6 +614,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "container-runtime-plugins-settings"
+version = "0.1.0"
+dependencies = [
+ "migration-helpers",
+]
+
+[[package]]
+name = "container-runtime-snapshotter-setting"
+version = "0.1.0"
+dependencies = [
+ "migration-helpers",
+]
+
+[[package]]
 name = "core_extensions"
 version = "1.5.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
