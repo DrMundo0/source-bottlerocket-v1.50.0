@@ -5,10 +5,8 @@ members = [
     "packages/settings-plugins",
 
     "variants/aws-dev",
-    "variants/aws-ecs-1",
     "variants/aws-ecs-2",
     "variants/aws-ecs-2-fips",
-    "variants/aws-ecs-1-nvidia",
     "variants/aws-ecs-2-nvidia",
     "variants/aws-k8s-1.28",
     "variants/aws-k8s-1.28-fips",

@@ -125,17 +125,6 @@ It supports self-hosted clusters and clusters managed by [EKS](https://aws.amazo
 
 This variant is compatible with Kubernetes 1.33, 1.34, 1.35 and 1.36 clusters.
 
-### aws-ecs-1: Amazon ECS container instance
-
-The [aws-ecs-1](aws-ecs-1/Cargo.toml) variant includes the packages needed to run an [Amazon ECS](https://ecs.aws)
-container instance in AWS.
-
-### aws-ecs-1-nvidia: Amazon ECS container instance
-
-The [aws-ecs-1-nvidia](aws-ecs-1-nvidia/Cargo.toml) variant includes the packages needed to run an [Amazon ECS](https://ecs.aws)
-container instance in AWS.
-It also includes the required packages to configure containers to leverage NVIDIA GPUs.
-
 ### aws-ecs-2: Amazon ECS container instance
 
 The [aws-ecs-2](aws-ecs-2/Cargo.toml) variant includes the packages needed to run an [Amazon ECS](https://ecs.aws)
@@ -490,6 +479,17 @@ The [metal-k8s-1.29](metal-k8s-1.29/Cargo.toml) variant included the packages ne
 It supports self-hosted clusters.
 
 This variant was compatible with Kubernetes 1.29, 1.30, 1.31, and 1.32 clusters.
+
+### aws-ecs-1: Amazon ECS container instance
+
+The [aws-ecs-1](aws-ecs-1/Cargo.toml) variant included the packages needed to run an [Amazon ECS](https://ecs.aws)
+container instance in AWS.
+
+### aws-ecs-1-nvidia: Amazon ECS container instance
+
+The [aws-ecs-1-nvidia](aws-ecs-1-nvidia/Cargo.toml) variant included the packages needed to run an [Amazon ECS](https://ecs.aws)
+container instance in AWS.
+It also included the required packages to configure containers to leverage NVIDIA GPUs.
 
 ## Development
 
