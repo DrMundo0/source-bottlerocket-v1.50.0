@@ -30,17 +30,6 @@ Conflicts: %{_cross_os}settings-plugin(any)
 %description aws-dev
 %{summary}.
 
-%package aws-ecs-1
-Summary: Settings plugin for the aws-ecs-1 variant
-Requires: (%{_cross_os}variant(aws-ecs-1) or %{_cross_os}variant(aws-ecs-1-nvidia))
-Provides: %{_cross_os}settings-plugin(any)
-Provides: %{_cross_os}settings-plugin(aws-ecs-1)
-Provides: %{_cross_os}settings-plugin(aws-ecs-1-nvidia)
-Conflicts: %{_cross_os}settings-plugin(any)
-
-%description aws-ecs-1
-%{summary}.
-
 %package aws-ecs-2
 Summary: Settings plugin for the aws-ecs-2 variant
 Requires: (%{shrink:
@@ -143,7 +132,6 @@ Conflicts: %{_cross_os}settings-plugin(any)
 %build
 %cargo_build --manifest-path %{_builddir}/sources/Cargo.toml \
   -p settings-plugin-aws-dev \
-  -p settings-plugin-aws-ecs-1 \
   -p settings-plugin-aws-ecs-2 \
   -p settings-plugin-aws-k8s \
   -p settings-plugin-aws-k8s-nvidia \
@@ -159,7 +147,6 @@ install -d %{buildroot}%{_cross_tmpfilesdir}
 
 for plugin in \
   aws-dev \
-  aws-ecs-1 \
   aws-ecs-2 \
   aws-k8s-nvidia \
   aws-k8s \
@@ -188,11 +175,6 @@ done
 %{_cross_pluginsdir}/aws-dev/libsettings.so
 %{_cross_factorydir}%{_cross_sysconfdir}/ld.so.conf.d/aws-dev.conf
 %{_cross_tmpfilesdir}/settings-plugin-aws-dev.conf
-
-%files aws-ecs-1
-%{_cross_pluginsdir}/aws-ecs-1/libsettings.so
-%{_cross_factorydir}%{_cross_sysconfdir}/ld.so.conf.d/aws-ecs-1.conf
-%{_cross_tmpfilesdir}/settings-plugin-aws-ecs-1.conf
 
 %files aws-ecs-2
 %{_cross_pluginsdir}/aws-ecs-2/libsettings.so
