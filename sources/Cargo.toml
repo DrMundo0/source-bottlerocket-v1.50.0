@@ -14,8 +14,6 @@ members = [
     "retry-read",
 
     "settings-defaults/aws-dev",
-    "settings-defaults/aws-ecs-1",
-    "settings-defaults/aws-ecs-1-nvidia",
     "settings-defaults/aws-ecs-2",
     "settings-defaults/aws-ecs-2-nvidia",
     "settings-defaults/aws-k8s-1.31",
