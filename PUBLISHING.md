@@ -208,7 +208,7 @@ First, open the directory for your variant under [sources/models/src/](sources/m
 Then, open the `defaults.d` directory.
 Here, you can have any number of TOML files, or symlinks to shared TOML files, that define your default settings.
 Later files override earlier ones.
-For an example, take a look at the [aws-ecs-1 defaults](sources/models/src/aws-ecs-1/defaults.d/).
+For an example, take a look at the [aws-ecs-2 defaults](sources/models/src/aws-ecs-2/defaults.d/).
 
 These default settings will be applied to your hosts at startup, meaning any host you run would already know to look at your repo.
 (You'll probably want to commit your changes into your fork of the repo; we're working on ways of making it easier to maintain your own model and settings without a fork.)

@@ -14,7 +14,7 @@ Unless you intend to test the default variant, it is best to pass the relevant v
 
 ```shell
 cargo make \
-  -e BUILDSYS_VARIANT="aws-ecs-1" \
+  -e BUILDSYS_VARIANT="aws-ecs-2" \
   -e BUILDSYS_ARCH="x86_64" \
   unit-tests
 ```
@@ -254,18 +254,18 @@ Change the commands below to the desired `aws-ecs` variant and AWS region:
 
 ```shell
 cargo make \
-  -e BUILDSYS_VARIANT="aws-ecs-1" \
+  -e BUILDSYS_VARIANT="aws-ecs-2" \
   -e BUILDSYS_ARCH="x86_64" \
   build
 
 cargo make \
-  -e BUILDSYS_VARIANT="aws-ecs-1" \
+  -e BUILDSYS_VARIANT="aws-ecs-2" \
   -e BUILDSYS_ARCH="x86_64" \
   -e PUBLISH_REGIONS="us-west-2" \
   ami
 
 cargo make \
-  -e BUILDSYS_VARIANT="aws-ecs-1" \
+  -e BUILDSYS_VARIANT="aws-ecs-2" \
   -e BUILDSYS_ARCH="x86_64" \
   test
 ```

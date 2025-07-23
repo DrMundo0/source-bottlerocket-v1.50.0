@@ -76,8 +76,6 @@ The following variants support EKS, as described above:
 
 The following variants support ECS:
 
-* `aws-ecs-1`
-* `aws-ecs-1-nvidia`
 * `aws-ecs-2`
 * `aws-ecs-2-nvidia`
 
@@ -95,6 +93,7 @@ The following variants are no longer supported:
 * All Kubernetes variants using Kubernetes 1.27 and earlier
 * VMware variants using Kubernetes 1.27 and earlier
 * Bare metal variants for Kubernetes
+* ECS-1 variants
 
 We recommend users replace nodes running these variants with the [latest variant compatible with their cluster](variants/).
 
