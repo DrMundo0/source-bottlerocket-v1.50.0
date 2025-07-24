@@ -46,6 +46,7 @@ template-path = "/usr/share/templates/kubelet-server-crt"
 [configuration-files.kubelet-server-key]
 path = "/etc/kubernetes/pki/private/kubelet-server.key"
 template-path = "/usr/share/templates/kubelet-server-key"
+mode = "0600"
 
 [configuration-files.kubelet-exec-start-conf]
 path = "/etc/systemd/system/kubelet.service.d/exec-start.conf"
