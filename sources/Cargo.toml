@@ -14,8 +14,6 @@ members = [
     "retry-read",
 
     "settings-defaults/aws-dev",
-    "settings-defaults/aws-ecs-1",
-    "settings-defaults/aws-ecs-1-nvidia",
     "settings-defaults/aws-ecs-2",
     "settings-defaults/aws-ecs-2-nvidia",
     "settings-defaults/aws-k8s-1.31",
@@ -40,7 +38,6 @@ members = [
     "settings-migrations/v1.42.0/kubernetes-memory-swap-behavior-setting",
 
     "settings-plugins/aws-dev",
-    "settings-plugins/aws-ecs-1",
     "settings-plugins/aws-ecs-2",
     "settings-plugins/aws-k8s",
     "settings-plugins/aws-k8s-nvidia",

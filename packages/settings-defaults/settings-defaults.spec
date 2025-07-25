@@ -27,26 +27,6 @@ Conflicts: %{_cross_os}settings-defaults(any)
 %description aws-dev
 %{summary}.
 
-%package aws-ecs-1
-Summary: Settings defaults for the aws-ecs-1 variant
-Requires: %{_cross_os}variant(aws-ecs-1)
-Provides: %{_cross_os}settings-defaults(any)
-Provides: %{_cross_os}settings-defaults(aws-ecs-1)
-Conflicts: %{_cross_os}settings-defaults(any)
-
-%description aws-ecs-1
-%{summary}.
-
-%package aws-ecs-1-nvidia
-Summary: Settings defaults for the aws-ecs-1-nvidia variant
-Requires: %{_cross_os}variant(aws-ecs-1-nvidia)
-Provides: %{_cross_os}settings-defaults(any)
-Provides: %{_cross_os}settings-defaults(aws-ecs-1-nvidia)
-Conflicts: %{_cross_os}settings-defaults(any)
-
-%description aws-ecs-1-nvidia
-%{summary}.
-
 %package aws-ecs-2
 Summary: Settings defaults for the aws-ecs-2 FIPS and non-FIPS variants
 Requires: (%{shrink:
@@ -72,9 +52,8 @@ Conflicts: %{_cross_os}settings-defaults(any)
 %{summary}.
 
 %package aws-k8s-1.31
-Summary: Settings defaults for the aws-k8s 1.27 through 1.31 variants
+Summary: Settings defaults for the aws-k8s 1.28 through 1.31 variants
 Requires: (%{shrink:
-           %{_cross_os}variant(aws-k8s-1.27)      or
            %{_cross_os}variant(aws-k8s-1.28)      or
            %{_cross_os}variant(aws-k8s-1.28-fips) or
            %{_cross_os}variant(aws-k8s-1.29)      or
@@ -85,7 +64,6 @@ Requires: (%{shrink:
            %{_cross_os}variant(aws-k8s-1.31-fips)
            %{nil}})
 Provides: %{_cross_os}settings-defaults(any)
-Provides: %{_cross_os}settings-defaults(aws-k8s-1.27)
 Provides: %{_cross_os}settings-defaults(aws-k8s-1.28)
 Provides: %{_cross_os}settings-defaults(aws-k8s-1.28-fips)
 Provides: %{_cross_os}settings-defaults(aws-k8s-1.29)
@@ -100,16 +78,14 @@ Conflicts: %{_cross_os}settings-defaults(any)
 %{summary}.
 
 %package aws-k8s-1.31-nvidia
-Summary: Settings defaults for the aws-k8s 1.27 through 1.31 nvidia variants
+Summary: Settings defaults for the aws-k8s 1.28 through 1.31 nvidia variants
 Requires: (%{shrink:
-           %{_cross_os}variant(aws-k8s-1.27-nvidia) or
            %{_cross_os}variant(aws-k8s-1.28-nvidia) or
            %{_cross_os}variant(aws-k8s-1.29-nvidia) or
            %{_cross_os}variant(aws-k8s-1.30-nvidia) or
            %{_cross_os}variant(aws-k8s-1.31-nvidia)
            %{nil}})
 Provides: %{_cross_os}settings-defaults(any)
-Provides: %{_cross_os}settings-defaults(aws-k8s-1.27-nvidia)
 Provides: %{_cross_os}settings-defaults(aws-k8s-1.28-nvidia)
 Provides: %{_cross_os}settings-defaults(aws-k8s-1.29-nvidia)
 Provides: %{_cross_os}settings-defaults(aws-k8s-1.30-nvidia)
@@ -192,9 +168,8 @@ Conflicts: %{_cross_os}settings-defaults(any)
 %{summary}.
 
 %package vmware-k8s-1.32
-Summary: Settings defaults for the vmware-k8s 1.27 through 1.32 variants
+Summary: Settings defaults for the vmware-k8s 1.28 through 1.32 variants
 Requires: (%{shrink:
-           %{_cross_os}variant(vmware-k8s-1.27)      or
            %{_cross_os}variant(vmware-k8s-1.28)      or
            %{_cross_os}variant(vmware-k8s-1.28-fips) or
            %{_cross_os}variant(vmware-k8s-1.29)      or
@@ -207,7 +182,6 @@ Requires: (%{shrink:
            %{_cross_os}variant(vmware-k8s-1.32-fips)
           %{nil}})
 Provides: %{_cross_os}settings-defaults(any)
-Provides: %{_cross_os}settings-defaults(vmware-k8s-1.27)
 Provides: %{_cross_os}settings-defaults(vmware-k8s-1.28)
 Provides: %{_cross_os}settings-defaults(vmware-k8s-1.28-fips)
 Provides: %{_cross_os}settings-defaults(vmware-k8s-1.29)
@@ -245,8 +219,6 @@ Conflicts: %{_cross_os}settings-defaults(any)
 declare -a projects
 for defaults in \
   aws-dev \
-  aws-ecs-1 \
-  aws-ecs-1-nvidia \
   aws-ecs-2 \
   aws-ecs-2-nvidia \
   aws-k8s-1.31 \
@@ -280,8 +252,6 @@ install -d %{buildroot}%{_cross_tmpfilesdir}
 
 for defaults in \
   aws-dev \
-  aws-ecs-1 \
-  aws-ecs-1-nvidia \
   aws-ecs-2 \
   aws-ecs-2-nvidia \
   aws-k8s-1.31 \
@@ -311,14 +281,6 @@ done
 %files aws-dev
 %{_cross_defaultsdir}/aws-dev.toml
 %{_cross_tmpfilesdir}/storewolf-defaults-aws-dev.conf
-
-%files aws-ecs-1
-%{_cross_defaultsdir}/aws-ecs-1.toml
-%{_cross_tmpfilesdir}/storewolf-defaults-aws-ecs-1.conf
-
-%files aws-ecs-1-nvidia
-%{_cross_defaultsdir}/aws-ecs-1-nvidia.toml
-%{_cross_tmpfilesdir}/storewolf-defaults-aws-ecs-1-nvidia.conf
 
 %files aws-ecs-2
 %{_cross_defaultsdir}/aws-ecs-2.toml

@@ -1359,20 +1359,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "settings-defaults-aws-ecs-1"
-version = "0.1.0"
-dependencies = [
- "bottlerocket-defaults-helper",
-]
-
-[[package]]
-name = "settings-defaults-aws-ecs-1-nvidia"
-version = "0.1.0"
-dependencies = [
- "bottlerocket-defaults-helper",
-]
-
-[[package]]
 name = "settings-defaults-aws-ecs-2"
 version = "0.1.0"
 dependencies = [
@@ -1754,17 +1740,6 @@ dependencies = [
 
 [[package]]
 name = "settings-plugin-aws-dev"
-version = "0.1.0"
-dependencies = [
- "abi_stable",
- "bottlerocket-settings-models",
- "bottlerocket-settings-plugin",
- "serde",
- "serde_json",
-]
-
-[[package]]
-name = "settings-plugin-aws-ecs-1"
 version = "0.1.0"
 dependencies = [
  "abi_stable",

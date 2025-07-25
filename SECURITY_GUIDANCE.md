@@ -313,7 +313,7 @@ enabled = false
 ### Amazon ECS
 
 These settings can passed as [user data](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) on EC2 instance launch.
-They are specific to the `aws-ecs-1` variant.
+They are specific to the `aws-ecs-2` variant.
 
 ```toml
 # By default, this variant does not allow launching privileged containers.
