@@ -36,6 +36,8 @@ members = [
     "settings-migrations/v1.40.0/kubelet-device-plugins-cdi-settings",
     "settings-migrations/v1.41.0/kubernetes-ecr-credential-providers-correction",
     "settings-migrations/v1.42.0/kubernetes-memory-swap-behavior-setting",
+    "settings-migrations/v1.44.0/container-runtime-plugins-settings",
+    "settings-migrations/v1.44.0/container-runtime-snapshotter-setting",
 
     "settings-plugins/aws-dev",
     "settings-plugins/aws-ecs-2",
@@ -109,22 +111,22 @@ version = "0.1.0"
 
 [workspace.dependencies.bottlerocket-modeled-types]
 git = "https://github.com/bottlerocket-os/bottlerocket-settings-sdk"
-tag = "bottlerocket-settings-models-v0.11.0"
+tag = "bottlerocket-settings-models-v0.12.0"
 version = "0.10.0"
 
 [workspace.dependencies.bottlerocket-settings-models]
 git = "https://github.com/bottlerocket-os/bottlerocket-settings-sdk"
-tag = "bottlerocket-settings-models-v0.11.0"
-version = "0.11.0"
+tag = "bottlerocket-settings-models-v0.12.0"
+version = "0.12.0"
 
 [workspace.dependencies.bottlerocket-settings-plugin]
 git = "https://github.com/bottlerocket-os/bottlerocket-settings-sdk"
-tag = "bottlerocket-settings-models-v0.11.0"
+tag = "bottlerocket-settings-models-v0.12.0"
 version = "0.1.0"
 
 [workspace.dependencies.settings-extension-oci-defaults]
 git = "https://github.com/bottlerocket-os/bottlerocket-settings-sdk"
-tag = "bottlerocket-settings-models-v0.11.0"
+tag = "bottlerocket-settings-models-v0.12.0"
 version = "0.1.0"
 
 [profile.release]

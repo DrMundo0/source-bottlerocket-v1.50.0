@@ -38,6 +38,7 @@ included-packages = [
     "cni",
     "cni-plugins",
     "kubelet-1.30",
+    "soci-snapshotter",
     # vmware
     "open-vm-tools",
 ]

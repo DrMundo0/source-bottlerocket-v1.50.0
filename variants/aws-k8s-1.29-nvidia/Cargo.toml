@@ -28,6 +28,7 @@ included-packages = [
     "cni-plugins",
     "kubelet-1.29",
     "aws-iam-authenticator",
+    "soci-snapshotter",
     # nvidia
     "nvidia-container-toolkit-k8s",
     "nvidia-k8s-device-plugin",
