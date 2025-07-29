@@ -1,3 +1,44 @@
+# v1.44.0 (2025-08-04)
+
+## Release Highlights
+* Remove `aws-k8s-1.27` and `aws-ecs-1` variants ([#4598])
+* Fix file descriptor leak in `apiserver exec` ([bottlerocket-core-kit#595])
+* Add `soci-snapshotter` support to kubernetes variants ([#4593])
+  * Configure `soci-snapshotter` for parallel pull unpack feature ([bottlerocket-core-kit#569])
+  * Optionally configure containerd and kubelet with `soci-snapshotter` via drop-in configuration files ([bottlerocket-core-kit#576])
+  * Extend selinux-policy to cover `soci-snapshotter` ([bottlerocket-core-kit#579])
+  * Add `configure-snapshotter.service` to reset state directories of snapshotters on boot when selected snapshotter changes ([bottlerocket-core-kit#582])
+  * Apply upstream patches to `soci-snapshotter` ([bottlerocket-core-kit#599])
+  * Drop CLI from `soci-snapshotter` ([bottlerocket-core-kit#569])
+
+## OS Changes
+* Update `bottlerocket-core-kit` from 9.2.1 to 10.0.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v1000-2025-07-25) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v9.2.1...v10.0.0)) ([#4605])
+* Update `bottlerocket-kernel-kit` from 3.2.1 to 3.3.1 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v331-2025-07-25) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v3.2.1...v3.3.1)) ([#4604])
+
+## Build Changes
+*  Add `reset-single-test` testsys command ([#4581])
+
+## Orchestrator Changes
+
+### Kubernetes
+* Add `soci-snapshotter` support to kubernetes variants ([#4593])
+* Remove `aws-k8s-1.27` variants ([#4598])
+
+### ECS
+* Remove `aws-ecs-1` variants ([#4598])
+
+[#4581]: https://github.com/bottlerocket-os/bottlerocket/pull/4581
+[#4593]: https://github.com/bottlerocket-os/bottlerocket/pull/4593
+[#4598]: https://github.com/bottlerocket-os/bottlerocket/pull/4598
+[#4604]: https://github.com/bottlerocket-os/bottlerocket/pull/4604
+[#4605]: https://github.com/bottlerocket-os/bottlerocket/pull/4605
+[bottlerocket-core-kit#569]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/569
+[bottlerocket-core-kit#576]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/576
+[bottlerocket-core-kit#579]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/579
+[bottlerocket-core-kit#582]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/582
+[bottlerocket-core-kit#595]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/595
+[bottlerocket-core-kit#599]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/599
+
 # v1.43.0 (2025-07-24)
 ## OS Changes
 * Update `bottlerocket-core-kit` from 9.1.0 to 9.2.1 ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v9.1.0...v9.2.1))([#dee811f6])
