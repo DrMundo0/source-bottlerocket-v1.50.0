@@ -12,7 +12,7 @@
   * Drop CLI from `soci-snapshotter` ([bottlerocket-core-kit#569])
 
 ## OS Changes
-* Update `bottlerocket-core-kit` from 9.2.1 to 10.0.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v1000-2025-07-25) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v9.2.1...v10.0.0)) ([#4605])
+* Update `bottlerocket-core-kit` from 9.2.1 to 10.0.1 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v1001-2025-07-31) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v9.2.1...v10.0.1)) ([#4605], [#4609])
 * Update `bottlerocket-kernel-kit` from 3.2.1 to 3.3.1 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v331-2025-07-25) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v3.2.1...v3.3.1)) ([#4604])
 
 ## Build Changes
@@ -32,6 +32,7 @@
 [#4598]: https://github.com/bottlerocket-os/bottlerocket/pull/4598
 [#4604]: https://github.com/bottlerocket-os/bottlerocket/pull/4604
 [#4605]: https://github.com/bottlerocket-os/bottlerocket/pull/4605
+[#4609]: https://github.com/bottlerocket-os/bottlerocket/pull/4609
 [bottlerocket-core-kit#569]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/569
 [bottlerocket-core-kit#576]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/576
 [bottlerocket-core-kit#579]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/579
