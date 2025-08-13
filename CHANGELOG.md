@@ -1,3 +1,25 @@
+# v1.45.0 (2025-08-18)
+
+## Release Highlights
+* Fix `containerd-2.0` settings for `max_concurrent_downloads` ([bottlerocket-core-kit#623])
+
+## OS Changes
+* Restrict kubelet's exec-start file permission to 0600 ([#4574])
+* Restrict kubelet-server.key file permission to 0600 ([#4599])
+* Update admin container from 0.12.1 to 0.12.2 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-admin-container/blob/develop/CHANGELOG.md#0122) ([commits](https://github.com/bottlerocket-os/bottlerocket-admin-container/compare/v0.12.1...v0.12.2)) ([#4612])
+* Update bootstrap container from 0.2.4 to 0.2.5 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/blob/develop/CHANGELOG.md#025) ([commits](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/compare/v0.2.4...v0.2.5)) ([#4612])
+* Update control container from 0.8.6 to 0.8.7 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-control-container/blob/develop/CHANGELOG.md#087) ([commits](https://github.com/bottlerocket-os/bottlerocket-control-container/compare/v0.8.6...v0.8.7)) ([#4612])
+* Update `bottlerocket-kernel-kit` from 3.3.1 to 4.0.1 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v401-2025-08-11) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v3.3.1...v4.0.1))([#4613])
+* Update `bottlerocket-core-kit` from 10.0.1 to 10.1.1 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v1011-2025-08-13) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v10.0.1...v10.1.1))([#4615], [#4616])
+
+[#4574]: https://github.com/bottlerocket-os/bottlerocket/pull/4574
+[#4599]: https://github.com/bottlerocket-os/bottlerocket/pull/4599
+[#4612]: https://github.com/bottlerocket-os/bottlerocket/pull/4612
+[#4613]: https://github.com/bottlerocket-os/bottlerocket/pull/4613
+[#4615]: https://github.com/bottlerocket-os/bottlerocket/pull/4615
+[#4616]: https://github.com/bottlerocket-os/bottlerocket/pull/4616
+[bottlerocket-core-kit#623]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/623
+
 # v1.44.0 (2025-08-04)
 
 ## Release Highlights
