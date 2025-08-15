@@ -10,7 +10,7 @@
 * Update bootstrap container from 0.2.4 to 0.2.5 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/blob/develop/CHANGELOG.md#025) ([commits](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/compare/v0.2.4...v0.2.5)) ([#4612])
 * Update control container from 0.8.6 to 0.8.7 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-control-container/blob/develop/CHANGELOG.md#087) ([commits](https://github.com/bottlerocket-os/bottlerocket-control-container/compare/v0.8.6...v0.8.7)) ([#4612])
 * Update `bottlerocket-kernel-kit` from 3.3.1 to 4.0.1 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v401-2025-08-11) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v3.3.1...v4.0.1))([#4613])
-* Update `bottlerocket-core-kit` from 10.0.1 to 10.1.1 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v1011-2025-08-13) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v10.0.1...v10.1.1))([#4615], [#4616])
+* Update `bottlerocket-core-kit` from 10.0.1 to 10.1.2 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v1012-2025-08-14) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v10.0.1...v10.1.2))([#4615], [#4616], [#4619])
 
 [#4574]: https://github.com/bottlerocket-os/bottlerocket/pull/4574
 [#4599]: https://github.com/bottlerocket-os/bottlerocket/pull/4599
@@ -18,6 +18,7 @@
 [#4613]: https://github.com/bottlerocket-os/bottlerocket/pull/4613
 [#4615]: https://github.com/bottlerocket-os/bottlerocket/pull/4615
 [#4616]: https://github.com/bottlerocket-os/bottlerocket/pull/4616
+[#4619]: https://github.com/bottlerocket-os/bottlerocket/pull/4619
 [bottlerocket-core-kit#623]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/623
 
 # v1.44.0 (2025-08-04)
