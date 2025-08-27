@@ -1,3 +1,25 @@
+# v1.46.0 (2025-09-02)
+
+## Release Highlights
+* Add support for new Kubernetes setting `static-pods-enabled` ([bottlerocket-core-kit#641])
+* Add default bind directories for ephemeral storage ([bottlerocket-core-kit#632])
+
+## OS Changes
+* Update `bottlerocket-sdk` from 0.63.0 to 0.64.0 ([commits](https://github.com/bottlerocket-os/bottlerocket-sdk/compare/v0.63.0...v0.64.0))([#4623])
+* Update `bottlerocket-core-kit` from 10.1.2 to 10.3.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v1030-2025-08-26) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v10.1.2...v10.3.0)) ([#4623], [#4628])
+* Update `bottlerocket-kernel-kit` from 4.0.1 to 4.2.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v420-2025-08-25) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v4.0.1...v4.2.0)) ([#4623], [#4626])
+
+## Build Changes
+### Twoliter
+* Update `twoliter` from 0.11.0 to 0.12.0 and schema-version to 2 [CHANGELOG](https://github.com/bottlerocket-os/twoliter/blob/develop/CHANGELOG.md#0120---2025-08-21) ([commits](https://github.com/bottlerocket-os/twoliter/compare/v0.11.0...v0.12.0)) ([#4624])
+
+[#4623]: https://github.com/bottlerocket-os/bottlerocket/pull/4623
+[#4624]: https://github.com/bottlerocket-os/bottlerocket/pull/4624
+[#4626]: https://github.com/bottlerocket-os/bottlerocket/pull/4626
+[#4628]: https://github.com/bottlerocket-os/bottlerocket/pull/4628
+[bottlerocket-core-kit#632]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/632
+[bottlerocket-core-kit#641]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/641
+
 # v1.45.0 (2025-08-18)
 
 ## Release Highlights
