@@ -38,6 +38,7 @@ members = [
     "settings-migrations/v1.42.0/kubernetes-memory-swap-behavior-setting",
     "settings-migrations/v1.44.0/container-runtime-plugins-settings",
     "settings-migrations/v1.44.0/container-runtime-snapshotter-setting",
+    "settings-migrations/v1.46.0/kubernetes-static-pods-enabled-setting",
 
     "settings-plugins/aws-dev",
     "settings-plugins/aws-ecs-2",
