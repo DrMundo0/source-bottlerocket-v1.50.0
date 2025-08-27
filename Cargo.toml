@@ -20,12 +20,15 @@ members = [
     "variants/aws-k8s-1.32-fips",
     "variants/aws-k8s-1.33",
     "variants/aws-k8s-1.33-fips",
+    "variants/aws-k8s-1.34",
+    "variants/aws-k8s-1.34-fips",
     "variants/aws-k8s-1.28-nvidia",
     "variants/aws-k8s-1.29-nvidia",
     "variants/aws-k8s-1.30-nvidia",
     "variants/aws-k8s-1.31-nvidia",
     "variants/aws-k8s-1.32-nvidia",
     "variants/aws-k8s-1.33-nvidia",
+    "variants/aws-k8s-1.34-nvidia",
     "variants/metal-dev",
     "variants/vmware-dev",
     "variants/vmware-k8s-1.28",
@@ -40,6 +43,8 @@ members = [
     "variants/vmware-k8s-1.32-fips",
     "variants/vmware-k8s-1.33",
     "variants/vmware-k8s-1.33-fips",
+    "variants/vmware-k8s-1.34",
+    "variants/vmware-k8s-1.34-fips",
 ]
 
 [profile.dev]
