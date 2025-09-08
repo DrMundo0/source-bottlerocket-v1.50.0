@@ -1223,6 +1223,7 @@ dependencies = [
  "handlebars",
  "maplit",
  "models",
+ "regex",
  "serde",
  "serde_json",
  "shlex",
