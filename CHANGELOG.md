@@ -1,3 +1,37 @@
+# v1.47.0 (2025-09-15)
+
+## Release Highlights
+* Add new kubernetes 1.34 variants ([#4631]):
+  * Add `aws-k8s-1.34`, `aws-k8s-1.34-nvidia`, `aws-k8s-1.34-fips`, `vmware-k8s-1.34`, and `vmware-k8s-1.34-fips` variants
+  * All k8s-1.34 variants use the following:
+    * Kernel 6.12
+    * `systemd-257` ([bottlerocket-core-kit#581], [bottlerocket-core-kit#636])
+    * `nftables` for managing network filter rules ([bottlerocket-core-kit#549])
+    * `containerd-2.1` ([bottlerocket-core-kit#621])
+      * Default `concurrent-download-chunk-size` setting is set at `8mib`
+      * Remove the support for Schema 1 images
+    * Update defaults for the `shutdown-grace-period` to 2 minutes and 30 seconds with the last 30 seconds reserved for critical pods for aws variants.
+  * Default device list strategy is set to `cdi-cri` for nvidia k8s device plugin
+  * `aws-k8s-1.34-nvidia` variant uses NVIDIA R580 drivers
+* Add `command` field to override default entrypoint for host and bootstrap containers ([#4636], [bottlerocket-core-kit#594]) - Thanks @kasimeka!
+* Add `containerd-2.1` setting for `concurrent-download-chunk-size` ([#4638], [bottlerocket-core-kit#645])
+
+## OS Changes
+* Update `bottlerocket-kernel-kit` from 4.2.0 to 4.3.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v430-2025-09-08) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v4.2.0...v4.3.0)) ([#4637])
+* Update `bottlerocket-core-kit` from 10.3.0 to 10.4.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v1040-2025-09-08) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v10.3.0...v10.4.0)) ([#4639])
+
+[#4631]: https://github.com/bottlerocket-os/bottlerocket/pull/4631
+[#4636]: https://github.com/bottlerocket-os/bottlerocket/pull/4636
+[#4637]: https://github.com/bottlerocket-os/bottlerocket/pull/4637
+[#4638]: https://github.com/bottlerocket-os/bottlerocket/pull/4638
+[#4639]: https://github.com/bottlerocket-os/bottlerocket/pull/4639
+[bottlerocket-core-kit#549]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/549
+[bottlerocket-core-kit#581]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/581
+[bottlerocket-core-kit#594]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/594
+[bottlerocket-core-kit#621]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/621
+[bottlerocket-core-kit#636]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/636
+[bottlerocket-core-kit#645]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/645
+
 # v1.46.0 (2025-09-02)
 
 ## Release Highlights
