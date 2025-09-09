@@ -438,4 +438,5 @@ version = "1.47.0"
     "migrate_v1.46.0_kubernetes-static-pods-enabled-setting.lz4",
 ]
 "(1.46.0, 1.47.0)" = [
+    "migrate_v1.47.0_container-runtime-concurrent-download-chunk-size.lz4",
 ]
