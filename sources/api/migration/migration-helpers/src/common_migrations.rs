@@ -1,5 +1,6 @@
 use crate::{error, Migration, MigrationData, Result};
-use snafu::OptionExt;
+use regex::Regex;
+use snafu::{OptionExt, ResultExt};
 
 /// We use this migration when we add settings and want to make sure they're removed before we go
 /// back to old versions that don't understand them.
@@ -152,6 +153,206 @@ mod test_add_prefixes_migration {
     }
 }
 
+// =^..^=   =^..^=   =^..^=   =^..^=   =^..^=   =^..^=   =^..^=   =^..^=   =^..^=
+pub struct PrefixSuffix {
+    pub prefix: &'static str,
+    pub suffix: &'static str,
+}
+pub struct AddPrefixSuffixMigration(pub Vec<PrefixSuffix>);
+
+impl Migration for AddPrefixSuffixMigration {
+    /// New versions must either have a default for the settings or generate them; we don't need to
+    /// do anything.
+    fn forward(&mut self, input: MigrationData) -> Result<MigrationData> {
+        println!(
+            "AddPrefixSuffixMigration({:?}) has no work to do on upgrade.",
+            self.0
+                .iter()
+                .map(|ps| format!("{}*{}", ps.prefix, ps.suffix))
+                .collect::<Vec<_>>()
+        );
+        Ok(input)
+    }
+
+    /// Older versions don't know about the settings; we remove them so that old versions don't see
+    /// them and fail deserialization.
+    fn backward(&mut self, mut input: MigrationData) -> Result<MigrationData> {
+        let mut compiled_patterns = Vec::new();
+        for pattern in &self.0 {
+            let regex_pattern = format!(
+                r"^{}\.(.+)\.{}$",
+                regex::escape(pattern.prefix),
+                regex::escape(pattern.suffix)
+            );
+            let regex =
+                Regex::new(&regex_pattern).context(error::InvalidPrefixSuffixPatternSnafu {
+                    prefix: pattern.prefix,
+                    suffix: pattern.suffix,
+                })?;
+            compiled_patterns.push(regex);
+        }
+
+        let settings = input
+            .data
+            .keys()
+            .filter(|k| compiled_patterns.iter().any(|regex| regex.is_match(k)))
+            .cloned()
+            .collect::<Vec<_>>();
+        for setting in settings {
+            if let Some(data) = input.data.remove(&setting) {
+                println!("Removed {setting}, which was set to '{data}'");
+            }
+        }
+        Ok(input)
+    }
+}
+
+#[cfg(test)]
+mod test_add_prefix_suffix_migration {
+    use super::{AddPrefixSuffixMigration, PrefixSuffix};
+    use crate::{Migration, MigrationData};
+    use maplit::hashmap;
+    use std::collections::HashMap;
+
+    #[test]
+    fn single_entry() {
+        let data = MigrationData {
+            data: hashmap! {
+                "keep.stuff.like.this".into() => 0.into(),
+                "remove.stuff.like.this".into() => 0.into(),
+                "keep.this.too".into() => 0.into(),
+                "remove.also.like.this".into() => 0.into(),
+            },
+            metadata: HashMap::new(),
+        };
+        let result = AddPrefixSuffixMigration(vec![PrefixSuffix {
+            prefix: "remove",
+            suffix: "this",
+        }])
+        .backward(data)
+        .unwrap();
+        assert_eq!(
+            result.data,
+            hashmap! {
+                "keep.stuff.like.this".into() => 0.into(),
+                "keep.this.too".into() => 0.into(),
+            }
+        );
+    }
+
+    #[test]
+    fn compound_suffix() {
+        let data = MigrationData {
+            data: hashmap! {
+                "keep.stuff.like.this".into() => 0.into(),
+                "remove.stuff.like.this".into() => 0.into(),
+                "keep.this.too".into() => 0.into(),
+                "remove.not.this".into() => 0.into(),
+            },
+            metadata: HashMap::new(),
+        };
+        let result = AddPrefixSuffixMigration(vec![PrefixSuffix {
+            prefix: "remove",
+            suffix: "like.this",
+        }])
+        .backward(data)
+        .unwrap();
+        assert_eq!(
+            result.data,
+            hashmap! {
+                "keep.stuff.like.this".into() => 0.into(),
+                "keep.this.too".into() => 0.into(),
+                "remove.not.this".into() => 0.into(),
+            }
+        );
+    }
+
+    #[test]
+    fn multiple_entries() {
+        let data = MigrationData {
+            data: hashmap! {
+                "keep.stuff.like.this".into() => 0.into(),
+                "remove.stuff.like.this".into() => 0.into(),
+                "keep.this.too".into() => 0.into(),
+                "remove.also.this".into() => 0.into(),
+                "delete.something.here".into() => 0.into(),
+            },
+            metadata: HashMap::new(),
+        };
+        let result = AddPrefixSuffixMigration(vec![
+            PrefixSuffix {
+                prefix: "remove",
+                suffix: "this",
+            },
+            PrefixSuffix {
+                prefix: "delete",
+                suffix: "here",
+            },
+        ])
+        .backward(data)
+        .unwrap();
+        assert_eq!(
+            result.data,
+            hashmap! {
+                "keep.stuff.like.this".into() => 0.into(),
+                "keep.this.too".into() => 0.into(),
+            }
+        );
+    }
+
+    #[test]
+    fn no_match() {
+        let data = MigrationData {
+            data: hashmap! {
+                "keep.stuff.like.this".into() => 0.into(),
+                "keep.this.too".into() => 0.into(),
+                "other.setting.here".into() => 0.into(),
+            },
+            metadata: HashMap::new(),
+        };
+        let result = AddPrefixSuffixMigration(vec![PrefixSuffix {
+            prefix: "remove.",
+            suffix: ".this",
+        }])
+        .backward(data)
+        .unwrap();
+        assert_eq!(
+            result.data,
+            hashmap! {
+                "keep.stuff.like.this".into() => 0.into(),
+                "keep.this.too".into() => 0.into(),
+                "other.setting.here".into() => 0.into(),
+            }
+        );
+    }
+
+    #[test]
+    fn tight_matching() {
+        let data = MigrationData {
+            data: hashmap! {
+                "settings.host-containers.admin.command".into() => 0.into(),
+                "settings.host-containers.command".into() => 0.into(), // No middle segment
+                "settings.host-containersadmincommand".into() => 0.into(), // No dots
+                "keep.this".into() => 0.into(),
+            },
+            metadata: HashMap::new(),
+        };
+        let result = AddPrefixSuffixMigration(vec![PrefixSuffix {
+            prefix: "settings.host-containers",
+            suffix: "command",
+        }])
+        .backward(data)
+        .unwrap();
+        assert_eq!(
+            result.data,
+            hashmap! {
+                "settings.host-containers.command".into() => 0.into(),
+                "settings.host-containersadmincommand".into() => 0.into(),
+                "keep.this".into() => 0.into(),
+            }
+        );
+    }
+}
 // =^..^=   =^..^=   =^..^=   =^..^=   =^..^=   =^..^=   =^..^=   =^..^=   =^..^=
 
 /// We use this migration when we remove settings from the model, so the new version doesn't see

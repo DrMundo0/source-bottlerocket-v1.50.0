@@ -43,6 +43,7 @@ members = [
     "settings-migrations/v1.44.0/container-runtime-snapshotter-setting",
     "settings-migrations/v1.46.0/kubernetes-static-pods-enabled-setting",
     "settings-migrations/v1.47.0/container-runtime-concurrent-download-chunk-size",
+    "settings-migrations/v1.47.0/host-bootstrap-containers-command-setting",
 
     "settings-plugins/aws-dev",
     "settings-plugins/aws-ecs-2",

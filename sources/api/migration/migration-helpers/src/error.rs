@@ -72,6 +72,18 @@ pub enum Error {
         source: Box<datastore::Error>,
     },
 
+    #[snafu(display(
+        "Invalid regex pattern for prefix '{}' and suffix '{}': {}",
+        prefix,
+        suffix,
+        source
+    ))]
+    InvalidPrefixSuffixPattern {
+        prefix: String,
+        suffix: String,
+        source: regex::Error,
+    },
+
     #[snafu(display("Unable to list transactions in data store: {}", source))]
     ListTransactions {
         #[snafu(source(from(datastore::Error, Box::new)))]
