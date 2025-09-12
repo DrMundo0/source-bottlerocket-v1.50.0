@@ -18,13 +18,14 @@
 
 ## OS Changes
 * Update `bottlerocket-kernel-kit` from 4.2.0 to 4.3.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v430-2025-09-08) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v4.2.0...v4.3.0)) ([#4637])
-* Update `bottlerocket-core-kit` from 10.3.0 to 10.4.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v1040-2025-09-08) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v10.3.0...v10.4.0)) ([#4639])
+* Update `bottlerocket-core-kit` from 10.3.0 to 10.4.1 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v1041-2025-09-11) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v10.3.0...v10.4.1)) ([#4639], [#4642])
 
 [#4631]: https://github.com/bottlerocket-os/bottlerocket/pull/4631
 [#4636]: https://github.com/bottlerocket-os/bottlerocket/pull/4636
 [#4637]: https://github.com/bottlerocket-os/bottlerocket/pull/4637
 [#4638]: https://github.com/bottlerocket-os/bottlerocket/pull/4638
 [#4639]: https://github.com/bottlerocket-os/bottlerocket/pull/4639
+[#4642]: https://github.com/bottlerocket-os/bottlerocket/pull/4642
 [bottlerocket-core-kit#549]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/549
 [bottlerocket-core-kit#581]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/581
 [bottlerocket-core-kit#594]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/594
