@@ -1,3 +1,22 @@
+# v1.48.0 (2025-09-29)
+
+## Release Highlights
+* Support passing arguments to `apiclient exec` subcommand with a `--` separator ([bottlerocket-core-kit#647])
+* Install `driverdog` for all variants ([bottlerocket-core-kit#656]) - Thanks @fletcherw!
+
+## OS Changes
+* Update `bottlerocket-kernel-kit` from 4.3.0 to 4.3.1 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v431-2025-09-15) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v4.3.0...v4.3.1)) ([#4644])
+* Update `bottlerocket-core-kit` from 10.4.1 to 10.6.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v1060-2025-09-23) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v10.4.1...v10.6.0)) ([#4649])
+* Update `admin-container` from 0.12.2 to 0.12.3 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-admin-container/blob/develop/CHANGELOG.md#0123) ([commits](https://github.com/bottlerocket-os/bottlerocket-admin-container/compare/v0.12.2...v0.12.3)) ([#4647])
+* Update `bootstrap-container` from 0.2.5 to 0.2.6 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/blob/develop/CHANGELOG.md#026) ([commits](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/compare/v0.2.5...v0.2.6)) ([#4647])
+* Update `control-container` from 0.8.7 to 0.8.8 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-control-container/blob/develop/CHANGELOG.md#088) ([commits](https://github.com/bottlerocket-os/bottlerocket-control-container/compare/v0.8.7...v0.8.8)) ([#4647])
+
+[#4644]: https://github.com/bottlerocket-os/bottlerocket/pull/4644
+[#4647]: https://github.com/bottlerocket-os/bottlerocket/pull/4647
+[#4649]: https://github.com/bottlerocket-os/bottlerocket/pull/4649
+[bottlerocket-core-kit#647]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/647
+[bottlerocket-core-kit#656]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/656
+
 # v1.47.0 (2025-09-15)
 
 ## Release Highlights
