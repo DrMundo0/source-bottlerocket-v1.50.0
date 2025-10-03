@@ -332,7 +332,7 @@ aws ec2 run-instances --key-name YOUR_KEY_NAME \
    --subnet-id SUBNET_ID \
    --security-group-ids SECURITY_GROUP_ID_1 SECURITY_GROUP_ID_2 \
    --image-id BOTTLEROCKET_AMI_ID \
-   --instance-type c3.large \
+   --instance-type c7.large \
    --region us-west-2 \
    --tag-specifications 'ResourceType=instance,Tags=[{Key=kubernetes.io/cluster/bottlerocket,Value=owned}]' \
    --user-data file://user-data.toml \

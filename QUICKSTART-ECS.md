@@ -186,7 +186,7 @@ There are a few values to make sure you change in this command:
 aws ec2 run-instances --key-name YOUR_KEY_NAME \
    --subnet-id SUBNET_ID \
    --image-id BOTTLEROCKET_AMI_ID \
-   --instance-type c3.large \
+   --instance-type c7.large \
    --region us-west-2 \
    --tag-specifications 'ResourceType=instance,Tags=[{Key=bottlerocket,Value=quickstart}]' \
    --user-data file://user-data.toml \
