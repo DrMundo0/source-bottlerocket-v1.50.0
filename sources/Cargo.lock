@@ -1159,13 +1159,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "kubernetes-reserved-pid-settings"
-version = "0.1.0"
-dependencies = [
- "migration-helpers",
-]
-
-[[package]]
 name = "kubernetes-static-pods-enabled-setting"
 version = "0.1.0"
 dependencies = [
