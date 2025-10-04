@@ -1,16 +1,9 @@
 # v1.49.0 (2025-10-09)
 
-## Release Highlights
-* Add support for new kubernetes setting `kube-reserved.pid` and `system-reserved.pid` ([#4650], [bottlerocket-core-kit#646])
-
 ## OS Changes
-* Update `bottlerocket-core-kit` from 10.6.0 to 10.7.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v1070-2025-10-03) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v10.6.0...v10.7.0)) ([#4656])
 * Update `bottlerocket-kernel-kit` from 4.3.1 to 4.3.3 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v433-2025-10-03) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v4.3.1...v4.3.3)) ([#4657])
 
-[#4650]: https://github.com/bottlerocket-os/bottlerocket/pull/4650
-[#4656]: https://github.com/bottlerocket-os/bottlerocket/pull/4656
 [#4657]: https://github.com/bottlerocket-os/bottlerocket/pull/4657
-[bottlerocket-core-kit#646]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/646
 
 # v1.48.0 (2025-09-29)
 
