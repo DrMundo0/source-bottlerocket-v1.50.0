@@ -1,3 +1,25 @@
+# v1.50.0 (2025-10-20)
+
+## Release Highlights
+* Add support for new kubernetes setting `kube-reserved.pid` and `system-reserved.pid` ([#4661], [bottlerocket-core-kit#646])
+* Allow multiple sequential calls of `apiclient ephemeral-storage bind` ([bottlerocket-core-kit#679])
+
+## OS Changes
+
+* Update `bottlerocket-sdk` from 0.64.0 to 0.65.0 ([commits](https://github.com/bottlerocket-os/bottlerocket-sdk/compare/v0.64.0...v0.65.0))([#4664])
+* Update `bottlerocket-kernel-kit` from 4.3.3 to 4.4.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/blob/develop/CHANGELOG.md#v440-2025-10-16) ([commits](https://github.com/bottlerocket-os/bottlerocket-kernel-kit/compare/v4.3.3...v4.4.0)) ([#4664])
+* Update `bottlerocket-core-kit` from 10.6.0 to 10.8.0 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/CHANGELOG.md#v1080-2025-10-16) ([commits](https://github.com/bottlerocket-os/bottlerocket-core-kit/compare/v10.6.0...v10.8.0)) ([#4664])
+* Update `bootstrap-container` from 0.2.6 to 0.2.7 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/blob/develop/CHANGELOG.md#027) ([commits](https://github.com/bottlerocket-os/bottlerocket-bootstrap-container/compare/v0.2.6...v0.2.7)) ([#4664])
+* Update `control-container` from 0.8.8 to 0.8.9 [CHANGELOG](https://github.com/bottlerocket-os/bottlerocket-control-container/blob/develop/CHANGELOG.md#089) ([commits](https://github.com/bottlerocket-os/bottlerocket-control-container/compare/v0.8.8...v0.8.9)) ([#4664])
+
+### Settings Extensions
+* Update bottlerocket-settings-models to v0.16.0 ([#4661])
+
+[#4661]: https://github.com/bottlerocket-os/bottlerocket/pull/4661
+[#4664]: https://github.com/bottlerocket-os/bottlerocket/pull/4664
+[bottlerocket-core-kit#646]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/646
+[bottlerocket-core-kit#679]: https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/679
+
 # v1.49.0 (2025-10-09)
 
 ## OS Changes
