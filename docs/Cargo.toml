@@ -1,0 +1,9 @@
+[package]
+name = "docs"
+version = "1.0.0"
+edition = "2024"
+authors = [ "DrMundo0 <noreply@github.com>" ]
+
+[dependencies]
+clap = "2"
+regex = "1"
