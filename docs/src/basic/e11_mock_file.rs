@@ -3,20 +3,28 @@
 #[derive(Debug)]
 struct MockFile
 {
+    // 文件名
     name: String,
-    // 单字节值列表
+
+    // 文件内容，Vec<u8> 单字节类型的列表
     data: Vec<u8>,
 }
 
 pub fn startup() {
     // 使用字面量语法创建一个 MockFile 实例
-    let f1 = MockFile {
+    let mut f1 = MockFile {
         name: String::from("f1.txt"),
         data: Vec::new(),
     };
 
-    // 根据 f1 的引用去拿他的 name 字段
+    // 初始化 vec，填入三个值
+    f1.data.push('a' as u8);
+    f1.data.push('\n' as u8);
+    f1.data.push('b' as u8);
+
+    // 根据 f1 的引用去拿他的 filename
     let f1_name = &f1.name;
+    // data length
     let f1_length = &f1.data.len();
 
     println!("f1: {:?}", f1);

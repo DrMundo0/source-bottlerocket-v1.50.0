@@ -4,10 +4,13 @@ use std::io::BufReader;
 use std::io::prelude::*;
 use regex::Regex;
 
+// 引入命令行参数工具
 // https://github.com/clap-rs/clap/tree/v2.34.0/examples
 use clap::{ crate_authors, App, Arg };
 
-// T 需实现 BufRead trait 和 Sized trait
+/// @param T 需实现 BufRead trait 和 Sized trait
+///
+/// @param re 正则表达式
 fn process_lines<T: BufRead + Sized>(reader: T, re: Regex) {
     // 遍历文件的每一行
     for line in reader.lines() {
@@ -58,6 +61,7 @@ pub fn startup() {
 
     if input == "" {
         let stdin = io::stdin();
+        // lock() 函数会返回 stdin 并锁定 stdin，直到 if 块结束，reader 使用完 stdin 后会自动释放 stdin
         let reader = stdin.lock();
         process_lines(reader, re);
     } else {

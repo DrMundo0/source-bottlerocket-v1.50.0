@@ -18,3 +18,5 @@
 *.run
 /tests
 Twoliter.override
+
+.idea/
