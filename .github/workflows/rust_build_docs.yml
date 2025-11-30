@@ -2,9 +2,9 @@ name: Rust-build-docs
 
 on:
   push:
-    branches: [ "1.18.x" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "1.18.x" ]
+    branches: [ "master" ]
 
 env:
   CARGO_TERM_COLOR: always

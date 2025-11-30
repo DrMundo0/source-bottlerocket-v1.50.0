@@ -45,3 +45,5 @@ $ cargo build --target=x86_64-pc-windows-gnu
 ```
 
 * Cross-compilation: https://rust-lang.github.io/rustup/cross-compilation.html
+
+## JSON 序列化

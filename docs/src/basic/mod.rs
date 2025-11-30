@@ -9,3 +9,4 @@ pub mod e08_grep;
 pub mod e09_stdin;
 pub mod e10_type_alias;
 pub mod e11_mock_file;
+pub mod e12_json;
